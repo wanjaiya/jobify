@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.intl-tel-input {
+    width: 100% !important;
+}
+
+.pass-view{
+    position: absolute;
+  right: 0;
+  color: #888888;
+  z-index: 3;
+  padding: 0.7rem;
+}

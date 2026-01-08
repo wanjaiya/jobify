@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your JobBoard Pro account - Register as a job seeker or employer to access thousands of opportunities and top talent.">
+    <title>Create Account - JobBoard Pro</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjobboardp4887back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-card sticky top-0 z-navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="landing_page.html" class="flex items-center space-x-3">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1E40AF"/>
+                                    <stop offset="1" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-2xl font-heading font-bold text-primary">JobBoard Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary transition-smooth">Browse Jobs</a>
+                    <a href="javascript:void(0)" class="text-primary font-medium">Sign Up</a>
+                    <a href="javascript:void(0)" class="btn btn-outline">Sign In</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden touch-target" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Browse Jobs</a>
+                    <a href="javascript:void(0)" class="text-primary font-medium py-2">Sign Up</a>
+                    <a href="javascript:void(0)" class="btn btn-outline w-full">Sign In</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-3">
+                    Create Your Account
+                </h1>
+                <p class="text-lg text-text-secondary">
+                    Join thousands of professionals finding their perfect match
+                </p>
+            </div>
+
+            <!-- Social Login Options -->
+            <div class="card mb-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <button type="button" class="btn btn-outline flex items-center justify-center gap-3" id="linkedin-signup">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1233648cb-1767674605812.png" 
+                            alt="LinkedIn logo"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span>Continue with LinkedIn</span>
+                    </button>
+                    <button type="button" class="btn btn-outline flex items-center justify-center gap-3" id="google-signup">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_147e74f66-1767674607273.png" 
+                            alt="Google logo"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span>Continue with Google</span>
+                    </button>
+                </div>
+
+                <div class="relative mb-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-border-neutral"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-surface text-text-secondary font-caption">Or register with email</span>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="registration-form" novalidate>
+                    <!-- Role Selection -->
+                    <div class="mb-6">
+                        <label class="label">I want to register as</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <button 
+                                type="button" 
+                                class="role-btn flex flex-col items-center justify-center p-6 border-2 border-border-neutral rounded-md hover:border-primary hover:bg-primary-50 transition-smooth"
+                                data-role="candidate"
+                                id="candidate-role-btn"
+                            >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1cf2ce2a6-1766766647863.png" 
+                                    alt="Job seeker icon"
+                                    class="w-12 h-12 mb-3"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                                <span class="font-heading font-semibold text-lg text-text-primary">Job Seeker</span>
+                                <span class="text-sm text-text-secondary mt-1 font-caption">Find your dream job</span>
+                            </button>
+                            <button 
+                                type="button" 
+                                class="role-btn flex flex-col items-center justify-center p-6 border-2 border-border-neutral rounded-md hover:border-primary hover:bg-primary-50 transition-smooth"
+                                data-role="employer"
+                                id="employer-role-btn"
+                            >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_172dbc958-1766945065418.png" 
+                                    alt="Employer icon"
+                                    class="w-12 h-12 mb-3"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                                <span class="font-heading font-semibold text-lg text-text-primary">Employer</span>
+                                <span class="text-sm text-text-secondary mt-1 font-caption">Find top talent</span>
+                            </button>
+                        </div>
+                        <input type="hidden" id="user-role" name="role" required>
+                        <p class="input-error-message hidden" id="role-error">Please select your account type</p>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="mb-6">
+                        <label for="full-name" class="label">Full Name</label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="full-name" 
+                                name="fullName"
+                                class="input pl-12" 
+                                placeholder="John Doe"
+                                required
+                                autocomplete="name"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_162cfe286-1766199602828.png" 
+                                alt="User icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <p class="input-error-message hidden" id="name-error">Please enter your full name</p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-6">
+                        <label for="email" class="label">Email Address</label>
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                class="input pl-12" 
+                                placeholder="john.doe@example.com"
+                                required
+                                autocomplete="email"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1154c588e-1767115667753.png" 
+                                alt="Email icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <p class="input-error-message hidden" id="email-error">Please enter a valid email address</p>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-6">
+                        <label for="password" class="label">Password</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password"
+                                class="input pl-12 pr-12" 
+                                placeholder="Create a strong password"
+                                required
+                                autocomplete="new-password"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1d946cfab-1767674605235.png" 
+                                alt="Lock icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <button 
+                                type="button" 
+                                class="absolute right-4 top-1/2 -translate-y-1/2 touch-target p-2"
+                                id="toggle-password"
+                                aria-label="Toggle password visibility"
+                            >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_148e1a884-1765409696333.png" 
+                                    alt="Hide password icon"
+                                    class="w-5 h-5"
+                                    id="password-icon"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </button>
+                        </div>
+                        <!-- Password Strength Indicator -->
+                        <div class="mt-2">
+                            <div class="flex gap-1 mb-1">
+                                <div class="h-1 flex-1 rounded-full bg-background-secondary" id="strength-bar-1"></div>
+                                <div class="h-1 flex-1 rounded-full bg-background-secondary" id="strength-bar-2"></div>
+                                <div class="h-1 flex-1 rounded-full bg-background-secondary" id="strength-bar-3"></div>
+                                <div class="h-1 flex-1 rounded-full bg-background-secondary" id="strength-bar-4"></div>
+                            </div>
+                            <p class="input-hint" id="password-strength">Password strength: <span id="strength-text">Not set</span></p>
+                        </div>
+                        <p class="input-error-message hidden" id="password-error">Password must be at least 8 characters</p>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-6">
+                        <label for="confirm-password" class="label">Confirm Password</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="confirm-password" 
+                                name="confirmPassword"
+                                class="input pl-12 pr-12" 
+                                placeholder="Re-enter your password"
+                                required
+                                autocomplete="new-password"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1398298d5-1766476603039.png" 
+                                alt="Lock check icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <button 
+                                type="button" 
+                                class="absolute right-4 top-1/2 -translate-y-1/2 touch-target p-2"
+                                id="toggle-confirm-password"
+                                aria-label="Toggle confirm password visibility"
+                            >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_148e1a884-1765409696333.png" 
+                                    alt="Hide password icon"
+                                    class="w-5 h-5"
+                                    id="confirm-password-icon"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </button>
+                        </div>
+                        <p class="input-error-message hidden" id="confirm-password-error">Passwords do not match</p>
+                    </div>
+
+                    <!-- Role-Specific Fields - Candidate -->
+                    <div id="candidate-fields" class="hidden">
+                        <!-- Current Job Title -->
+                        <div class="mb-6">
+                            <label for="job-title" class="label">Current Job Title</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="job-title" 
+                                    name="jobTitle"
+                                    class="input pl-12" 
+                                    placeholder="e.g. Software Engineer"
+                                    autocomplete="organization-title"
+                                >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_126249350-1766920588107.png" 
+                                    alt="Briefcase icon"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Experience Level -->
+                        <div class="mb-6">
+                            <label for="experience-level" class="label">Experience Level</label>
+                            <div class="relative">
+                                <select 
+                                    id="experience-level" 
+                                    name="experienceLevel"
+                                    class="input pl-12 appearance-none bg-surface cursor-pointer"
+                                >
+                                    <option value="">Select your experience level</option>
+                                    <option value="entry">Entry Level (0-2 years)</option>
+                                    <option value="mid">Mid Level (3-5 years)</option>
+                                    <option value="senior">Senior Level (6-10 years)</option>
+                                    <option value="lead">Lead/Principal (10+ years)</option>
+                                    <option value="executive">Executive</option>
+                                </select>
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1c94b4291-1767674617648.png" 
+                                    alt="Experience level icon"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png" 
+                                    alt="Dropdown arrow"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role-Specific Fields - Employer -->
+                    <div id="employer-fields" class="hidden">
+                        <!-- Company Name -->
+                        <div class="mb-6">
+                            <label for="company-name" class="label">Company Name</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="company-name" 
+                                    name="companyName"
+                                    class="input pl-12" 
+                                    placeholder="e.g. TechCorp Inc."
+                                    autocomplete="organization"
+                                >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ffdc30d2-1767674608406.png" 
+                                    alt="Building icon"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Industry -->
+                        <div class="mb-6">
+                            <label for="industry" class="label">Industry</label>
+                            <div class="relative">
+                                <select 
+                                    id="industry" 
+                                    name="industry"
+                                    class="input pl-12 appearance-none bg-surface cursor-pointer"
+                                >
+                                    <option value="">Select your industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="education">Education</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_196d17f72-1767674606794.png" 
+                                    alt="Industry icon"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png" 
+                                    alt="Dropdown arrow"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Privacy -->
+                    <div class="mb-6">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input 
+                                type="checkbox" 
+                                id="terms-checkbox" 
+                                name="terms"
+                                class="mt-1 w-5 h-5 rounded border-border-neutral text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer"
+                                required
+                            >
+                            <span class="text-sm text-text-secondary font-caption">
+                                I agree to the <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-smooth">Terms of Service</a> and <a href="javascript:void(0)" class="text-primary hover:text-primary-700 transition-smooth">Privacy Policy</a>
+                            </span>
+                        </label>
+                        <p class="input-error-message hidden ml-8" id="terms-error">You must agree to the terms and privacy policy</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-full" id="submit-btn">
+                        <span id="submit-text">Create Account</span>
+                        <svg class="hidden animate-spin w-5 h-5 ml-2" id="submit-spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Sign In Link -->
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-text-secondary font-caption">
+                            Already have an account? 
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 font-medium transition-smooth">Sign In</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-text-secondary">
+                <div class="flex items-center gap-2">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_101a09604-1767674609374.png" 
+                        alt="SSL security badge"
+                        class="w-5 h-5"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    <span class="text-sm font-caption">SSL Secured</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_11797ea96-1767674607737.png" 
+                        alt="Data protection badge"
+                        class="w-5 h-5"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    <span class="text-sm font-caption">Data Protected</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_11080f17b-1765416625504.png" 
+                        alt="Verified platform badge"
+                        class="w-5 h-5"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    <span class="text-sm font-caption">Verified Platform</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3B82F6"/>
+                                    <stop offset="1" stop-color="#1E40AF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">JobBoard Pro</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Connecting talented professionals with amazing opportunities since 2020.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Facebook">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1de1c197c-1767382101482.png" alt="Facebook icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Twitter">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12bdddea3-1767674606771.png" alt="Twitter icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="LinkedIn">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aafdc73a-1767674605828.png" alt="LinkedIn icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Job Seekers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Job Seekers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="job_listings.html" class="text-gray-400 hover:text-primary transition-smooth">Browse Jobs</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Create Profile</a></li>
+                        <li><a href="candidate_profile.html" class="text-gray-400 hover:text-primary transition-smooth">My Profile</a></li>
+                        <li><a href="application_tracking.html" class="text-gray-400 hover:text-primary transition-smooth">Track Applications</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Employers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Post a Job</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Employer Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Pricing</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 JobBoard Pro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Role selection
+        const candidateBtn = document.getElementById('candidate-role-btn');
+        const employerBtn = document.getElementById('employer-role-btn');
+        const userRoleInput = document.getElementById('user-role');
+        const candidateFields = document.getElementById('candidate-fields');
+        const employerFields = document.getElementById('employer-fields');
+        const roleError = document.getElementById('role-error');
+
+        function selectRole(role) {
+            // Update button styles
+            const allRoleBtns = document.querySelectorAll('.role-btn');
+            allRoleBtns.forEach(btn => {
+                btn.classList.remove('border-primary', 'bg-primary-50');
+                btn.classList.add('border-border-neutral');
+            });
+
+            // Set selected role
+            userRoleInput.value = role;
+            roleError.classList.add('hidden');
+
+            if (role === 'candidate') {
+                candidateBtn.classList.remove('border-border-neutral');
+                candidateBtn.classList.add('border-primary', 'bg-primary-50');
+                candidateFields.classList.remove('hidden');
+                employerFields.classList.add('hidden');
+            } else if (role === 'employer') {
+                employerBtn.classList.remove('border-border-neutral');
+                employerBtn.classList.add('border-primary', 'bg-primary-50');
+                employerFields.classList.remove('hidden');
+                candidateFields.classList.add('hidden');
+            }
+        }
+
+        candidateBtn.addEventListener('click', () => selectRole('candidate'));
+        employerBtn.addEventListener('click', () => selectRole('employer'));
+
+        // Password visibility toggle
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password');
+        const passwordIcon = document.getElementById('password-icon');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            if (type === 'text') {
+                passwordIcon.src = 'https://api.iconify.design/mdi:eye.svg?color=%236B7280';
+                passwordIcon.alt = 'Show password icon';
+            } else {
+                passwordIcon.src = 'https://api.iconify.design/mdi:eye-off.svg?color=%236B7280';
+                passwordIcon.alt = 'Hide password icon';
+            }
+        });
+
+        // Confirm password visibility toggle
+        const toggleConfirmPassword = document.getElementById('toggle-confirm-password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const confirmPasswordIcon = document.getElementById('confirm-password-icon');
+
+        toggleConfirmPassword.addEventListener('click', () => {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            
+            if (type === 'text') {
+                confirmPasswordIcon.src = 'https://api.iconify.design/mdi:eye.svg?color=%236B7280';
+                confirmPasswordIcon.alt = 'Show password icon';
+            } else {
+                confirmPasswordIcon.src = 'https://api.iconify.design/mdi:eye-off.svg?color=%236B7280';
+                confirmPasswordIcon.alt = 'Hide password icon';
+            }
+        });
+
+        // Password strength indicator
+        const strengthBars = [
+            document.getElementById('strength-bar-1'),
+            document.getElementById('strength-bar-2'),
+            document.getElementById('strength-bar-3'),
+            document.getElementById('strength-bar-4')
+        ];
+        const strengthText = document.getElementById('strength-text');
+
+        function calculatePasswordStrength(password) {
+            let strength = 0;
+            
+            if (password.length >= 8) strength++;
+            if (password.length >= 12) strength++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if (/\d/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+
+            return Math.min(strength, 4);
+        }
+
+        function updatePasswordStrength() {
+            const password = passwordInput.value;
+            const strength = calculatePasswordStrength(password);
+
+            // Reset all bars
+            strengthBars.forEach(bar => {
+                bar.classList.remove('bg-error', 'bg-warning', 'bg-success');
+                bar.classList.add('bg-background-secondary');
+            });
+
+            // Update bars based on strength
+            let color = 'bg-error';
+            let text = 'Weak';
+
+            if (strength === 0) {
+                text = 'Not set';
+            } else if (strength === 1) {
+                color = 'bg-error';
+                text = 'Weak';
+            } else if (strength === 2) {
+                color = 'bg-warning';
+                text = 'Fair';
+            } else if (strength === 3) {
+                color = 'bg-warning';
+                text = 'Good';
+            } else if (strength === 4) {
+                color = 'bg-success';
+                text = 'Strong';
+            }
+
+            for (let i = 0; i < strength; i++) {
+                strengthBars[i].classList.remove('bg-background-secondary');
+                strengthBars[i].classList.add(color);
+            }
+
+            strengthText.textContent = text;
+        }
+
+        passwordInput.addEventListener('input', updatePasswordStrength);
+
+        // Form validation
+        const form = document.getElementById('registration-form');
+        const fullNameInput = document.getElementById('full-name');
+        const emailInput = document.getElementById('email');
+        const confirmPasswordInput2 = document.getElementById('confirm-password');
+        const termsCheckbox = document.getElementById('terms-checkbox');
+
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+        const confirmPasswordError = document.getElementById('confirm-password-error');
+        const termsError = document.getElementById('terms-error');
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showError(input, errorElement, message) {
+            input.classList.add('input-error');
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        function hideError(input, errorElement) {
+            input.classList.remove('input-error');
+            errorElement.classList.add('hidden');
+        }
+
+        // Real-time validation
+        fullNameInput.addEventListener('blur', () => {
+            if (fullNameInput.value.trim() === '') {
+                showError(fullNameInput, nameError, 'Please enter your full name');
+            } else {
+                hideError(fullNameInput, nameError);
+            }
+        });
+
+        emailInput.addEventListener('blur', () => {
+            if (emailInput.value.trim() === '') {
+                showError(emailInput, emailError, 'Please enter your email address');
+            } else if (!validateEmail(emailInput.value)) {
+                showError(emailInput, emailError, 'Please enter a valid email address');
+            } else {
+                hideError(emailInput, emailError);
+            }
+        });
+
+        passwordInput.addEventListener('blur', () => {
+            if (passwordInput.value.length < 8) {
+                showError(passwordInput, passwordError, 'Password must be at least 8 characters');
+            } else {
+                hideError(passwordInput, passwordError);
+            }
+        });
+
+        confirmPasswordInput2.addEventListener('blur', () => {
+            if (confirmPasswordInput2.value !== passwordInput.value) {
+                showError(confirmPasswordInput2, confirmPasswordError, 'Passwords do not match');
+            } else {
+                hideError(confirmPasswordInput2, confirmPasswordError);
+            }
+        });
+
+        // Form submission
+        const submitBtn = document.getElementById('submit-btn');
+        const submitText = document.getElementById('submit-text');
+        const submitSpinner = document.getElementById('submit-spinner');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Validate role
+            if (!userRoleInput.value) {
+                roleError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Validate full name
+            if (fullNameInput.value.trim() === '') {
+                showError(fullNameInput, nameError, 'Please enter your full name');
+                isValid = false;
+            }
+
+            // Validate email
+            if (emailInput.value.trim() === '') {
+                showError(emailInput, emailError, 'Please enter your email address');
+                isValid = false;
+            } else if (!validateEmail(emailInput.value)) {
+                showError(emailInput, emailError, 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Validate password
+            if (passwordInput.value.length < 8) {
+                showError(passwordInput, passwordError, 'Password must be at least 8 characters');
+                isValid = false;
+            }
+
+            // Validate confirm password
+            if (confirmPasswordInput2.value !== passwordInput.value) {
+                showError(confirmPasswordInput2, confirmPasswordError, 'Passwords do not match');
+                isValid = false;
+            }
+
+            // Validate terms
+            if (!termsCheckbox.checked) {
+                termsError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                termsError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                // Show loading state
+                submitBtn.disabled = true;
+                submitText.textContent = 'Creating Account...';
+                submitSpinner.classList.remove('hidden');
+
+                // Simulate API call
+                setTimeout(() => {
+                    // Store user data in localStorage
+                    const userData = {
+                        role: userRoleInput.value,
+                        fullName: fullNameInput.value,
+                        email: emailInput.value,
+                        registeredAt: new Date().toISOString()
+                    };
+
+                    if (userRoleInput.value === 'candidate') {
+                        userData.jobTitle = document.getElementById('job-title').value;
+                        userData.experienceLevel = document.getElementById('experience-level').value;
+                    } else {
+                        userData.companyName = document.getElementById('company-name').value;
+                        userData.industry = document.getElementById('industry').value;
+                    }
+
+                    localStorage.setItem('jobboard_user', JSON.stringify(userData));
+
+                    // Redirect based on role
+                    if (userRoleInput.value === 'candidate') {
+                        window.location.href = 'candidate_profile.html';
+                    } else {
+                        window.location.href = 'landing_page.html';
+                    }
+                }, 2000);
+            }
+        });
+
+        // Social login handlers
+        document.getElementById('linkedin-signup').addEventListener('click', () => {
+            alert('LinkedIn authentication would be implemented here');
+        });
+
+        document.getElementById('google-signup').addEventListener('click', () => {
+            alert('Google authentication would be implemented here');
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

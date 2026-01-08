@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse thousands of job opportunities across various industries. Filter by location, salary, job type, and more to find your perfect match.">
+    <title>Job Listings - Find Your Perfect Job | JobBoard Pro</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjobboardp4887back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-card sticky top-0 z-navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="landing_page.html" class="flex items-center space-x-3">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1E40AF"/>
+                                    <stop offset="1" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-2xl font-heading font-bold text-primary">JobBoard Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-primary font-medium">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-text-secondary hover:text-primary transition-smooth">My Applications</a>
+                    <a href="candidate_profile.html" class="text-text-secondary hover:text-primary transition-smooth">Profile</a>
+                    <a href="user_registration.html" class="btn btn-primary">Post a Job</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden touch-target" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-primary font-medium py-2">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">My Applications</a>
+                    <a href="candidate_profile.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Profile</a>
+                    <a href="user_registration.html" class="btn btn-primary w-full">Post a Job</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Bar Section -->
+    <section class="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-surface rounded-lg shadow-elevated p-4 md:p-6">
+                <form id="job-search-form" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                    <!-- Keyword Search -->
+                    <div class="md:col-span-5">
+                        <label for="search-keywords" class="label text-text-secondary">Job Title or Keywords</label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="search-keywords" 
+                                class="input pl-12" 
+                                placeholder="e.g. Software Engineer"
+                                autocomplete="off"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" 
+                                alt="Search icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Location Search -->
+                    <div class="md:col-span-4">
+                        <label for="search-location" class="label text-text-secondary">Location</label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="search-location" 
+                                class="input pl-12" 
+                                placeholder="City, State or Remote"
+                                autocomplete="off"
+                            >
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                alt="Location icon"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="md:col-span-3 flex items-end">
+                        <button type="submit" class="btn btn-primary w-full">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" 
+                                alt="Search icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Search Jobs
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Filter Sidebar -->
+                <aside class="lg:w-80 flex-shrink-0">
+                    <!-- Mobile Filter Toggle -->
+                    <button 
+                        id="mobile-filter-btn" 
+                        class="lg:hidden btn btn-outline w-full mb-4 flex items-center justify-center"
+                        aria-label="Toggle filters"
+                    >
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_174ff6fc5-1765384100032.png" 
+                            alt="Filter icon"
+                            class="w-5 h-5 mr-2"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        Filters
+                        <span id="active-filter-count" class="ml-2 badge badge-primary hidden">0</span>
+                    </button>
+
+                    <!-- Filter Panel -->
+                    <div id="filter-panel" class="hidden lg:block bg-surface rounded-md shadow-card p-6 sticky top-24">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-heading font-semibold text-text-primary">Filters</h3>
+                            <button 
+                                id="clear-filters-btn" 
+                                class="text-sm text-primary hover:text-primary-700 transition-smooth font-caption"
+                                aria-label="Clear all filters"
+                            >
+                                Clear All
+                            </button>
+                        </div>
+
+                        <!-- Job Type Filter -->
+                        <div class="mb-6 pb-6 border-b border-border-light">
+                            <h4 class="font-heading font-semibold text-text-primary mb-3">Job Type</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="job-type" value="full-time">
+                                    <span class="ml-3 text-text-secondary">Full-time</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="job-type" value="part-time">
+                                    <span class="ml-3 text-text-secondary">Part-time</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="job-type" value="contract">
+                                    <span class="ml-3 text-text-secondary">Contract</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="job-type" value="internship">
+                                    <span class="ml-3 text-text-secondary">Internship</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Work Location Filter -->
+                        <div class="mb-6 pb-6 border-b border-border-light">
+                            <h4 class="font-heading font-semibold text-text-primary mb-3">Work Location</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="work-location" value="remote">
+                                    <span class="ml-3 text-text-secondary">Remote</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="work-location" value="hybrid">
+                                    <span class="ml-3 text-text-secondary">Hybrid</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="work-location" value="on-site">
+                                    <span class="ml-3 text-text-secondary">On-site</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Experience Level Filter -->
+                        <div class="mb-6 pb-6 border-b border-border-light">
+                            <h4 class="font-heading font-semibold text-text-primary mb-3">Experience Level</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="experience" value="entry">
+                                    <span class="ml-3 text-text-secondary">Entry Level</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="experience" value="mid">
+                                    <span class="ml-3 text-text-secondary">Mid Level</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="experience" value="senior">
+                                    <span class="ml-3 text-text-secondary">Senior Level</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="experience" value="executive">
+                                    <span class="ml-3 text-text-secondary">Executive</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Salary Range Filter -->
+                        <div class="mb-6 pb-6 border-b border-border-light">
+                            <h4 class="font-heading font-semibold text-text-primary mb-3">Salary Range</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="salary" value="0-50k">
+                                    <span class="ml-3 text-text-secondary">$0 - $50,000</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="salary" value="50k-100k">
+                                    <span class="ml-3 text-text-secondary">$50,000 - $100,000</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="salary" value="100k-150k">
+                                    <span class="ml-3 text-text-secondary">$100,000 - $150,000</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="salary" value="150k+">
+                                    <span class="ml-3 text-text-secondary">$150,000+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Company Size Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-heading font-semibold text-text-primary mb-3">Company Size</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="company-size" value="startup">
+                                    <span class="ml-3 text-text-secondary">Startup (1-50)</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="company-size" value="small">
+                                    <span class="ml-3 text-text-secondary">Small (51-200)</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="company-size" value="medium">
+                                    <span class="ml-3 text-text-secondary">Medium (201-1000)</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="filter-checkbox w-5 h-5 text-primary border-border-neutral rounded focus:ring-2 focus:ring-primary" data-filter="company-size" value="large">
+                                    <span class="ml-3 text-text-secondary">Large (1000+)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Job Results Section -->
+                <main class="flex-1">
+                    <!-- Results Header -->
+                    <div class="bg-surface rounded-md shadow-card p-4 md:p-6 mb-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div>
+                                <h2 class="text-2xl font-heading font-bold text-text-primary mb-1">
+                                    <span id="results-count">2,847</span> Jobs Found
+                                </h2>
+                                <p class="text-sm text-text-secondary font-caption">
+                                    Showing results for your search criteria
+                                </p>
+                            </div>
+
+                            <!-- Sort Options -->
+                            <div class="flex items-center gap-3">
+                                <label for="sort-select" class="text-sm text-text-secondary font-caption whitespace-nowrap">Sort by:</label>
+                                <select id="sort-select" class="input py-2 px-4 h-auto">
+                                    <option value="relevance">Most Relevant</option>
+                                    <option value="date">Most Recent</option>
+                                    <option value="salary-high">Salary: High to Low</option>
+                                    <option value="salary-low">Salary: Low to High</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Active Filters Tags -->
+                        <div id="active-filters" class="mt-4 flex flex-wrap gap-2 hidden">
+                            <!-- Filter tags will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Job Cards Grid -->
+                    <div id="job-results-grid" class="grid grid-cols-1 gap-6">
+                        <!-- Job Card 1 -->
+                        <div class="job-card card hover:shadow-elevated transition-smooth group" data-job-id="1">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <!-- Company Logo -->
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d875e36b-1767674608124.png" 
+                                        alt="TechCorp Inc. company logo"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+
+                                <!-- Job Details -->
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4 mb-3">
+                                        <div class="flex-1 min-w-0">
+                                            <a href="job_details.html" class="block group-hover:text-primary transition-smooth">
+                                                <h3 class="text-xl font-heading font-semibold text-text-primary mb-1 text-ellipsis-1">
+                                                    Senior Software Engineer
+                                                </h3>
+                                            </a>
+                                            <p class="text-text-secondary font-caption">TechCorp Inc.</p>
+                                        </div>
+                                        <button class="bookmark-btn touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Bookmark job" data-job-id="1">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18091453b-1767629473180.png" 
+                                                alt="Bookmark icon"
+                                                class="bookmark-icon w-6 h-6"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="badge badge-primary">Full-time</span>
+                                        <span class="badge badge-success">Remote</span>
+                                        <span class="badge badge-primary">Senior Level</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">San Francisco, CA</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18454f8fe-1767674615777.png" 
+                                                alt="Salary icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">$120,000 - $180,000/year</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5bc9f42-1766986569025.png" 
+                                                alt="Time icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Posted 2 days ago</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_14b852546-1767674616286.png" 
+                                                alt="Applicants icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">45 applicants</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-text-secondary text-ellipsis-2 mb-4">
+                                        Join our innovative team to build cutting-edge software solutions. We're looking for experienced engineers passionate about technology and creating impactful products.
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">React</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Node.js</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">TypeScript</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">AWS</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <a href="job_details.html" class="btn btn-primary flex-1 sm:flex-initial">
+                                            View Details
+                                        </a>
+                                        <button class="quick-apply-btn btn btn-outline flex-1 sm:flex-initial" data-job-id="1">
+                                            Quick Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 2 -->
+                        <div class="job-card card hover:shadow-elevated transition-smooth group" data-job-id="2">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7f73fc6-1767674606208.png" 
+                                        alt="DataFlow Solutions company logo"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4 mb-3">
+                                        <div class="flex-1 min-w-0">
+                                            <a href="job_details.html" class="block group-hover:text-primary transition-smooth">
+                                                <h3 class="text-xl font-heading font-semibold text-text-primary mb-1 text-ellipsis-1">
+                                                    Product Manager
+                                                </h3>
+                                            </a>
+                                            <p class="text-text-secondary font-caption">DataFlow Solutions</p>
+                                        </div>
+                                        <button class="bookmark-btn touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Bookmark job" data-job-id="2">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18091453b-1767629473180.png" 
+                                                alt="Bookmark icon"
+                                                class="bookmark-icon w-6 h-6"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="badge badge-primary">Full-time</span>
+                                        <span class="badge badge-warning">Hybrid</span>
+                                        <span class="badge badge-primary">Mid Level</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">New York, NY</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18454f8fe-1767674615777.png" 
+                                                alt="Salary icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">$130,000 - $170,000/year</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5bc9f42-1766986569025.png" 
+                                                alt="Time icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Posted 1 day ago</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_14b852546-1767674616286.png" 
+                                                alt="Applicants icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">32 applicants</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-text-secondary text-ellipsis-2 mb-4">
+                                        Lead product strategy and development for our flagship data analytics platform. Work with cross-functional teams to deliver exceptional value to customers.
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Product Strategy</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Agile</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Analytics</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <a href="job_details.html" class="btn btn-primary flex-1 sm:flex-initial">
+                                            View Details
+                                        </a>
+                                        <button class="quick-apply-btn btn btn-outline flex-1 sm:flex-initial" data-job-id="2">
+                                            Quick Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 3 -->
+                        <div class="job-card card hover:shadow-elevated transition-smooth group" data-job-id="3">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_15ec6baf4-1766854309684.png" 
+                                        alt="DesignHub Studio company logo"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4 mb-3">
+                                        <div class="flex-1 min-w-0">
+                                            <a href="job_details.html" class="block group-hover:text-primary transition-smooth">
+                                                <h3 class="text-xl font-heading font-semibold text-text-primary mb-1 text-ellipsis-1">
+                                                    UX/UI Designer
+                                                </h3>
+                                            </a>
+                                            <p class="text-text-secondary font-caption">DesignHub Studio</p>
+                                        </div>
+                                        <button class="bookmark-btn touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Bookmark job" data-job-id="3">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18091453b-1767629473180.png" 
+                                                alt="Bookmark icon"
+                                                class="bookmark-icon w-6 h-6"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="badge badge-primary">Full-time</span>
+                                        <span class="badge badge-success">Remote</span>
+                                        <span class="badge badge-primary">Mid Level</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Austin, TX</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18454f8fe-1767674615777.png" 
+                                                alt="Salary icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">$90,000 - $130,000/year</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5bc9f42-1766986569025.png" 
+                                                alt="Time icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Posted 3 days ago</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_14b852546-1767674616286.png" 
+                                                alt="Applicants icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">28 applicants</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-text-secondary text-ellipsis-2 mb-4">
+                                        Create beautiful, intuitive user experiences for web and mobile applications. Collaborate with developers to bring designs to life and delight users.
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Figma</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">UI Design</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">User Research</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <a href="job_details.html" class="btn btn-primary flex-1 sm:flex-initial">
+                                            View Details
+                                        </a>
+                                        <button class="quick-apply-btn btn btn-outline flex-1 sm:flex-initial" data-job-id="3">
+                                            Quick Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 4 -->
+                        <div class="job-card card hover:shadow-elevated transition-smooth group" data-job-id="4">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_17f54649f-1767674609275.png" 
+                                        alt="CloudScale Systems company logo"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4 mb-3">
+                                        <div class="flex-1 min-w-0">
+                                            <a href="job_details.html" class="block group-hover:text-primary transition-smooth">
+                                                <h3 class="text-xl font-heading font-semibold text-text-primary mb-1 text-ellipsis-1">
+                                                    DevOps Engineer
+                                                </h3>
+                                            </a>
+                                            <p class="text-text-secondary font-caption">CloudScale Systems</p>
+                                        </div>
+                                        <button class="bookmark-btn touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Bookmark job" data-job-id="4">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18091453b-1767629473180.png" 
+                                                alt="Bookmark icon"
+                                                class="bookmark-icon w-6 h-6"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="badge badge-primary">Full-time</span>
+                                        <span class="badge badge-success">Remote</span>
+                                        <span class="badge badge-primary">Senior Level</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Seattle, WA</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18454f8fe-1767674615777.png" 
+                                                alt="Salary icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">$110,000 - $160,000/year</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5bc9f42-1766986569025.png" 
+                                                alt="Time icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Posted 4 days ago</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_14b852546-1767674616286.png" 
+                                                alt="Applicants icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">38 applicants</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-text-secondary text-ellipsis-2 mb-4">
+                                        Build and maintain cloud infrastructure at scale. Automate deployments and ensure high availability for mission-critical systems serving millions of users.
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Kubernetes</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Docker</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">AWS</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">CI/CD</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <a href="job_details.html" class="btn btn-primary flex-1 sm:flex-initial">
+                                            View Details
+                                        </a>
+                                        <button class="quick-apply-btn btn btn-outline flex-1 sm:flex-initial" data-job-id="4">
+                                            Quick Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 5 -->
+                        <div class="job-card card hover:shadow-elevated transition-smooth group" data-job-id="5">
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1ea1162c3-1767263517797.png" 
+                                        alt="MarketPro Agency company logo"
+                                        class="w-full h-full object-cover"
+                                        loading="lazy"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-start justify-between gap-4 mb-3">
+                                        <div class="flex-1 min-w-0">
+                                            <a href="job_details.html" class="block group-hover:text-primary transition-smooth">
+                                                <h3 class="text-xl font-heading font-semibold text-text-primary mb-1 text-ellipsis-1">
+                                                    Digital Marketing Manager
+                                                </h3>
+                                            </a>
+                                            <p class="text-text-secondary font-caption">MarketPro Agency</p>
+                                        </div>
+                                        <button class="bookmark-btn touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Bookmark job" data-job-id="5">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18091453b-1767629473180.png" 
+                                                alt="Bookmark icon"
+                                                class="bookmark-icon w-6 h-6"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="badge badge-primary">Full-time</span>
+                                        <span class="badge badge-warning">Hybrid</span>
+                                        <span class="badge badge-primary">Mid Level</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Boston, MA</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_18454f8fe-1767674615777.png" 
+                                                alt="Salary icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">$85,000 - $120,000/year</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b5bc9f42-1766986569025.png" 
+                                                alt="Time icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">Posted 5 days ago</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_14b852546-1767674616286.png" 
+                                                alt="Applicants icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            <span class="font-caption">52 applicants</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-sm text-text-secondary text-ellipsis-2 mb-4">
+                                        Drive digital marketing strategy and execution across multiple channels. Lead campaigns that deliver measurable business results and ROI.
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">SEO</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Google Ads</span>
+                                        <span class="text-xs px-3 py-1 bg-background-secondary text-text-secondary rounded-full font-caption">Analytics</span>
+                                    </div>
+
+                                    <div class="flex items-center gap-3">
+                                        <a href="job_details.html" class="btn btn-primary flex-1 sm:flex-initial">
+                                            View Details
+                                        </a>
+                                        <button class="quick-apply-btn btn btn-outline flex-1 sm:flex-initial" data-job-id="5">
+                                            Quick Apply
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-8 flex justify-center">
+                        <nav class="flex items-center gap-2" aria-label="Pagination">
+                            <button class="btn btn-ghost px-4" disabled aria-label="Previous page">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_12a800bef-1765225109277.png" 
+                                    alt="Previous icon"
+                                    class="w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </button>
+                            <button class="btn btn-primary px-4" aria-label="Page 1" aria-current="page">1</button>
+                            <button class="btn btn-ghost px-4" aria-label="Page 2">2</button>
+                            <button class="btn btn-ghost px-4" aria-label="Page 3">3</button>
+                            <span class="px-2 text-text-secondary">...</span>
+                            <button class="btn btn-ghost px-4" aria-label="Page 57">57</button>
+                            <button class="btn btn-ghost px-4" aria-label="Next page">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_125f820bf-1766427641023.png" 
+                                    alt="Next icon"
+                                    class="w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </button>
+                        </nav>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3B82F6"/>
+                                    <stop offset="1" stop-color="#1E40AF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">JobBoard Pro</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Connecting talented professionals with amazing opportunities since 2020.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Facebook">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1de1c197c-1767382101482.png" alt="Facebook icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Twitter">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12bdddea3-1767674606771.png" alt="Twitter icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="LinkedIn">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aafdc73a-1767674605828.png" alt="LinkedIn icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Job Seekers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Job Seekers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="job_listings.html" class="text-gray-400 hover:text-primary transition-smooth">Browse Jobs</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Create Profile</a></li>
+                        <li><a href="candidate_profile.html" class="text-gray-400 hover:text-primary transition-smooth">My Profile</a></li>
+                        <li><a href="application_tracking.html" class="text-gray-400 hover:text-primary transition-smooth">Track Applications</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Employers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Post a Job</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Employer Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Pricing</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 JobBoard Pro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile filter toggle
+        const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+        const filterPanel = document.getElementById('filter-panel');
+
+        mobileFilterBtn.addEventListener('click', () => {
+            filterPanel.classList.toggle('hidden');
+            filterPanel.classList.toggle('block');
+        });
+
+        // Filter functionality
+        const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+        const activeFiltersContainer = document.getElementById('active-filters');
+        const activeFilterCount = document.getElementById('active-filter-count');
+        const clearFiltersBtn = document.getElementById('clear-filters-btn');
+        let activeFilters = {};
+
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateFilters);
+        });
+
+        clearFiltersBtn.addEventListener('click', () => {
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            activeFilters = {};
+            updateFilters();
+        });
+
+        function updateFilters() {
+            activeFilters = {};
+            filterCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const filterType = checkbox.dataset.filter;
+                    if (!activeFilters[filterType]) {
+                        activeFilters[filterType] = [];
+                    }
+                    activeFilters[filterType].push(checkbox.value);
+                }
+            });
+
+            renderActiveFilters();
+            updateFilterCount();
+            // Here you would typically filter the job results
+            console.log('Active filters:', activeFilters);
+        }
+
+        function renderActiveFilters() {
+            activeFiltersContainer.innerHTML = '';
+            const filterCount = Object.keys(activeFilters).reduce((count, key) => count + activeFilters[key].length, 0);
+
+            if (filterCount > 0) {
+                activeFiltersContainer.classList.remove('hidden');
+                Object.keys(activeFilters).forEach(filterType => {
+                    activeFilters[filterType].forEach(value => {
+                        const tag = document.createElement('div');
+                        tag.className = 'flex items-center gap-2 px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-caption';
+                        tag.innerHTML = `
+                            <span>${formatFilterValue(value)}</span>
+                            <button class="hover:text-primary-900" onclick="removeFilter('${filterType}', '${value}')" aria-label="Remove filter">
+                                <img src="https://api.iconify.design/mdi:close.svg?color=%231E40AF" alt="Remove icon" class="w-4 h-4" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            </button>
+                        `;
+                        activeFiltersContainer.appendChild(tag);
+                    });
+                });
+            } else {
+                activeFiltersContainer.classList.add('hidden');
+            }
+        }
+
+        function updateFilterCount() {
+            const count = Object.keys(activeFilters).reduce((total, key) => total + activeFilters[key].length, 0);
+            if (count > 0) {
+                activeFilterCount.textContent = count;
+                activeFilterCount.classList.remove('hidden');
+            } else {
+                activeFilterCount.classList.add('hidden');
+            }
+        }
+
+        function formatFilterValue(value) {
+            return value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+
+        window.removeFilter = function(filterType, value) {
+            const checkbox = document.querySelector(`input[data-filter="${filterType}"][value="${value}"]`);
+            if (checkbox) {
+                checkbox.checked = false;
+                updateFilters();
+            }
+        };
+
+        // Bookmark functionality
+        const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
+        let bookmarkedJobs = JSON.parse(localStorage.getItem('bookmarkedJobs') || '[]');
+
+        bookmarkBtns.forEach(btn => {
+            const jobId = btn.dataset.jobId;
+            if (bookmarkedJobs.includes(jobId)) {
+                updateBookmarkIcon(btn, true);
+            }
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleBookmark(jobId, btn);
+            });
+        });
+
+        function toggleBookmark(jobId, btn) {
+            const index = bookmarkedJobs.indexOf(jobId);
+            if (index > -1) {
+                bookmarkedJobs.splice(index, 1);
+                updateBookmarkIcon(btn, false);
+            } else {
+                bookmarkedJobs.push(jobId);
+                updateBookmarkIcon(btn, true);
+            }
+            localStorage.setItem('bookmarkedJobs', JSON.stringify(bookmarkedJobs));
+        }
+
+        function updateBookmarkIcon(btn, isBookmarked) {
+            const icon = btn.querySelector('.bookmark-icon');
+            if (isBookmarked) {
+                icon.src = 'https://api.iconify.design/mdi:bookmark.svg?color=%233B82F6';
+            } else {
+                icon.src = 'https://api.iconify.design/mdi:bookmark-outline.svg?color=%236B7280';
+            }
+        }
+
+        // Quick apply functionality
+        const quickApplyBtns = document.querySelectorAll('.quick-apply-btn');
+        quickApplyBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const jobId = btn.dataset.jobId;
+                // Check if user has complete profile
+                const hasCompleteProfile = localStorage.getItem('profileComplete') === 'true';
+                
+                if (hasCompleteProfile) {
+                    // Simulate quick apply
+                    btn.textContent = 'Applied!';
+                    btn.disabled = true;
+                    btn.classList.remove('btn-outline');
+                    btn.classList.add('btn-ghost');
+                    
+                    // Show success message
+                    alert('Application submitted successfully!');
+                } else {
+                    // Redirect to profile completion
+                    if (confirm('Please complete your profile to use Quick Apply. Go to profile now?')) {
+                        window.location.href = 'candidate_profile.html';
+                    }
+                }
+            });
+        });
+
+        // Search form submission
+        const searchForm = document.getElementById('job-search-form');
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const keywords = document.getElementById('search-keywords').value;
+            const location = document.getElementById('search-location').value;
+            
+            console.log('Searching for:', { keywords, location });
+            // Here you would typically filter the results
+            alert(`Searching for "${keywords}" in "${location}"`);
+        });
+
+        // Sort functionality
+        const sortSelect = document.getElementById('sort-select');
+        sortSelect.addEventListener('change', (e) => {
+            const sortBy = e.target.value;
+            console.log('Sorting by:', sortBy);
+            // Here you would typically re-sort the results
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

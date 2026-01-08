@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and manage your professional candidate profile on JobBoard Pro. Upload resume, showcase experience, education, and skills to connect with top employers.">
+    <title>My Profile - JobBoard Pro</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjobboardp4887back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-card sticky top-0 z-navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="landing_page.html" class="flex items-center space-x-3">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1E40AF"/>
+                                    <stop offset="1" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-2xl font-heading font-bold text-primary">JobBoard Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary transition-smooth">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-text-secondary hover:text-primary transition-smooth">My Applications</a>
+                    <a href="candidate_profile.html" class="text-primary font-medium">My Profile</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-2 text-text-secondary hover:text-primary transition-smooth touch-target" aria-label="User menu">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_16672fd44-1766814712045.png" 
+                                    alt="User account icon"
+                                    class="w-6 h-6"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png" 
+                                alt="Dropdown arrow icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                        <div class="dropdown hidden group-hover:block absolute right-0 mt-2 w-48 py-2">
+                            <a href="candidate_profile.html" class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">Profile Settings</a>
+                            <a href="application_tracking.html" class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">My Applications</a>
+                            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">Account Settings</a>
+                            <hr class="my-2 border-border-light">
+                            <a href="landing_page.html" class="block px-4 py-2 text-sm text-error hover:bg-error-50 transition-smooth">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden touch-target" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">My Applications</a>
+                    <a href="candidate_profile.html" class="text-primary font-medium py-2">My Profile</a>
+                    <hr class="border-border-light">
+                    <a href="candidate_profile.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Profile Settings</a>
+                    <a href="javascript:void(0)" class="text-text-secondary hover:text-primary py-2 transition-smooth">Account Settings</a>
+                    <a href="landing_page.html" class="text-error hover:text-error-700 py-2 transition-smooth">Sign Out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Profile Header Section -->
+    <section class="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div class="flex items-center gap-6">
+                    <div class="relative">
+                        <div class="w-24 h-24 rounded-full bg-surface overflow-hidden border-4 border-primary-100">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1e2dbb942-1763294941853.png" 
+                                alt="Sarah Johnson profile photo"
+                                class="w-full h-full object-cover"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <button class="absolute bottom-0 right-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-elevated hover:bg-primary-700 transition-smooth touch-target" aria-label="Change profile photo">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_183f953ed-1767102166755.png" 
+                                alt="Camera icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-heading font-bold text-white mb-2">Sarah Johnson</h1>
+                        <p class="text-primary-100 text-lg mb-2">Senior Software Engineer</p>
+                        <div class="flex items-center gap-2 text-primary-100 text-sm">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                alt="Location icon"
+                                class="w-4 h-4"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="font-caption">San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Completion -->
+                <div class="card bg-surface w-full md:w-auto md:min-w-[280px]">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-text-primary font-caption">Profile Completion</span>
+                        <span class="text-lg font-heading font-bold text-primary">85%</span>
+                    </div>
+                    <div class="w-full bg-background-secondary rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-primary to-accent h-full rounded-full transition-all duration-500" style="width: 85%"></div>
+                    </div>
+                    <p class="text-xs text-text-secondary mt-3 font-caption">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1d4c12eba-1765467699926.png" 
+                            alt="Tip icon"
+                            class="w-4 h-4 inline mr-1"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        Add 2 more skills to reach 100%
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Profile Visibility Settings -->
+        <div class="card mb-6 bg-accent-50 border-accent-200">
+            <div class="flex items-start gap-4">
+                <img 
+                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13f11ddb5-1767120258830.png" 
+                    alt="Visibility icon"
+                    class="w-6 h-6 mt-1 flex-shrink-0"
+                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                >
+                <div class="flex-1">
+                    <h3 class="font-heading font-semibold text-text-primary mb-2">Profile Visibility</h3>
+                    <p class="text-sm text-text-secondary mb-4">Control who can view your profile and contact you</p>
+                    <div class="flex flex-wrap gap-3">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="visibility" value="public" checked class="w-4 h-4 text-primary focus:ring-primary">
+                            <span class="text-sm text-text-primary font-caption">Public - Visible to all employers</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="visibility" value="private" class="w-4 h-4 text-primary focus:ring-primary">
+                            <span class="text-sm text-text-primary font-caption">Private - Only visible when applying</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-outline hidden md:inline-flex" id="preview-profile-btn">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1ddef3c6b-1765225668015.png" 
+                        alt="Preview icon"
+                        class="w-5 h-5 mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Preview Profile
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabbed Interface -->
+        <div class="card">
+            <!-- Desktop Tabs -->
+            <div class="hidden md:flex border-b border-border-light mb-6 -mx-8 px-8 overflow-x-auto">
+                <button class="tab-button active px-6 py-4 font-medium text-primary border-b-2 border-primary transition-smooth whitespace-nowrap" data-tab="personal">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1e5d3cbac-1767017342300.png" 
+                        alt="Personal info icon"
+                        class="w-5 h-5 inline mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Personal Information
+                </button>
+                <button class="tab-button px-6 py-4 font-medium text-text-secondary hover:text-primary transition-smooth whitespace-nowrap" data-tab="experience">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_136b3bb49-1765048938246.png" 
+                        alt="Experience icon"
+                        class="w-5 h-5 inline mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Experience
+                </button>
+                <button class="tab-button px-6 py-4 font-medium text-text-secondary hover:text-primary transition-smooth whitespace-nowrap" data-tab="education">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d9605b5f-1764677495796.png" 
+                        alt="Education icon"
+                        class="w-5 h-5 inline mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Education
+                </button>
+                <button class="tab-button px-6 py-4 font-medium text-text-secondary hover:text-primary transition-smooth whitespace-nowrap" data-tab="skills">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1a2400fd7-1767674616846.png" 
+                        alt="Skills icon"
+                        class="w-5 h-5 inline mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Skills
+                </button>
+                <button class="tab-button px-6 py-4 font-medium text-text-secondary hover:text-primary transition-smooth whitespace-nowrap" data-tab="documents">
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_129ae909a-1767010735349.png" 
+                        alt="Documents icon"
+                        class="w-5 h-5 inline mr-2"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                    Documents
+                </button>
+            </div>
+
+            <!-- Mobile Accordion -->
+            <div class="md:hidden space-y-4 mb-6">
+                <button class="mobile-accordion-btn w-full flex items-center justify-between p-4 bg-background-secondary rounded-md text-left active" data-tab="personal">
+                    <div class="flex items-center gap-3">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1e5d3cbac-1767017342300.png" 
+                            alt="Personal info icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span class="font-medium text-text-primary">Personal Information</span>
+                    </div>
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_12a4c2fe6-1764668817682.png" 
+                        alt="Expand icon"
+                        class="w-5 h-5 accordion-icon"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                </button>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between p-4 bg-background-secondary rounded-md text-left" data-tab="experience">
+                    <div class="flex items-center gap-3">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_136b3bb49-1765048938246.png" 
+                            alt="Experience icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span class="font-medium text-text-primary">Experience</span>
+                    </div>
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_12a4c2fe6-1764668817682.png" 
+                        alt="Expand icon"
+                        class="w-5 h-5 accordion-icon"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                </button>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between p-4 bg-background-secondary rounded-md text-left" data-tab="education">
+                    <div class="flex items-center gap-3">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1d9605b5f-1764677495796.png" 
+                            alt="Education icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span class="font-medium text-text-primary">Education</span>
+                    </div>
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_12a4c2fe6-1764668817682.png" 
+                        alt="Expand icon"
+                        class="w-5 h-5 accordion-icon"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                </button>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between p-4 bg-background-secondary rounded-md text-left" data-tab="skills">
+                    <div class="flex items-center gap-3">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1a2400fd7-1767674616846.png" 
+                            alt="Skills icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span class="font-medium text-text-primary">Skills</span>
+                    </div>
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_12a4c2fe6-1764668817682.png" 
+                        alt="Expand icon"
+                        class="w-5 h-5 accordion-icon"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                </button>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between p-4 bg-background-secondary rounded-md text-left" data-tab="documents">
+                    <div class="flex items-center gap-3">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_129ae909a-1767010735349.png" 
+                            alt="Documents icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span class="font-medium text-text-primary">Documents</span>
+                    </div>
+                    <img 
+                        src="https://img.rocket.new/generatedImages/rocket_gen_img_12a4c2fe6-1764668817682.png" 
+                        alt="Expand icon"
+                        class="w-5 h-5 accordion-icon"
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                    >
+                </button>
+            </div>
+
+            <!-- Tab Content: Personal Information -->
+            <div class="tab-content active" id="personal-tab">
+                <form id="personal-info-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="first-name" class="label">First Name *</label>
+                            <input 
+                                type="text" 
+                                id="first-name" 
+                                class="input" 
+                                value="Sarah"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label for="last-name" class="label">Last Name *</label>
+                            <input 
+                                type="text" 
+                                id="last-name" 
+                                class="input" 
+                                value="Johnson"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="label">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="input" 
+                                value="sarah.johnson@email.com"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label for="phone" class="label">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                class="input" 
+                                value="+1 (555) 123-4567"
+                                placeholder="+1 (555) 000-0000"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="location" class="label">Location *</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="location" 
+                                    class="input pl-12" 
+                                    value="San Francisco, CA"
+                                    placeholder="City, State"
+                                    required
+                                >
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                    alt="Location icon"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                        </div>
+                        <div>
+                            <label for="linkedin" class="label">LinkedIn Profile</label>
+                            <input 
+                                type="url" 
+                                id="linkedin" 
+                                class="input" 
+                                value="linkedin.com/in/sarahjohnson"
+                                placeholder="linkedin.com/in/yourprofile"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="headline" class="label">Professional Headline *</label>
+                        <input 
+                            type="text" 
+                            id="headline" 
+                            class="input" 
+                            value="Senior Software Engineer | Full-Stack Developer | Tech Lead"
+                            placeholder="e.g., Senior Software Engineer specializing in React and Node.js"
+                            required
+                        >
+                        <p class="input-hint">This appears at the top of your profile (max 100 characters)</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="summary" class="label">Professional Summary *</label>
+                        <textarea 
+                            id="summary" 
+                            class="textarea" 
+                            rows="6"
+                            required
+                        >Experienced software engineer with 8+ years of expertise in full-stack development, specializing in React, Node.js, and cloud technologies. Proven track record of leading cross-functional teams and delivering scalable solutions for Fortune 500 companies. Passionate about clean code, mentoring junior developers, and staying current with emerging technologies.</textarea>
+                        <p class="input-hint">Highlight your key achievements and what makes you unique (500-1000 characters recommended)</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="years-experience" class="label">Years of Experience *</label>
+                            <select id="years-experience" class="input" required>
+                                <option value="">Select experience level</option>
+                                <option value="0-1">0-1 years</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-7">5-7 years</option>
+                                <option value="7-10" selected>7-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="salary-expectation" class="label">Salary Expectation (USD)</label>
+                            <input 
+                                type="text" 
+                                id="salary-expectation" 
+                                class="input" 
+                                value="$120,000 - $180,000"
+                                placeholder="e.g., $80,000 - $100,000"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end gap-4">
+                        <button type="button" class="btn btn-ghost">Cancel</button>
+                        <button type="submit" class="btn btn-primary">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b2ddd32a-1767635531411.png" 
+                                alt="Save icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab Content: Experience -->
+            <div class="tab-content hidden" id="experience-tab">
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary">Work Experience</h3>
+                        <button class="btn btn-outline" id="add-experience-btn">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1025baf95-1767056477370.png" 
+                                alt="Add icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Add Experience
+                        </button>
+                    </div>
+
+                    <!-- Experience Item 1 -->
+                    <div class="card bg-background-secondary mb-4 experience-item">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1f8099e2c-1767674606213.png" 
+                                        alt="TechCorp company logo"
+                                        class="w-full h-full object-cover rounded-lg"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-heading font-semibold text-text-primary mb-1">Senior Software Engineer</h4>
+                                    <p class="text-text-secondary mb-2">TechCorp Inc.</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary mb-3">
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                                alt="Calendar icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            01/2022 - Present
+                                        </span>
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            San Francisco, CA
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">
+                                        Led development of microservices architecture serving 2M+ users. Mentored team of 5 junior developers and implemented CI/CD pipelines reducing deployment time by 60%. Technologies: React, Node.js, AWS, Docker, Kubernetes.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background rounded-lg transition-smooth" aria-label="Edit experience">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_139f66eeb-1767354051337.png" 
+                                        alt="Edit icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete experience">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="card bg-background-secondary mb-4 experience-item">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7f73fc6-1767674606208.png" 
+                                        alt="DataFlow Solutions company logo"
+                                        class="w-full h-full object-cover rounded-lg"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-heading font-semibold text-text-primary mb-1">Software Engineer</h4>
+                                    <p class="text-text-secondary mb-2">DataFlow Solutions</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary mb-3">
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                                alt="Calendar icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            06/2018 - 12/2021
+                                        </span>
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            New York, NY
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">
+                                        Developed and maintained data analytics platform processing 500GB+ daily. Improved query performance by 40% through database optimization. Collaborated with product team on feature development using Agile methodologies.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background rounded-lg transition-smooth" aria-label="Edit experience">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_139f66eeb-1767354051337.png" 
+                                        alt="Edit icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete experience">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Education -->
+            <div class="tab-content hidden" id="education-tab">
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary">Education</h3>
+                        <button class="btn btn-outline" id="add-education-btn">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1025baf95-1767056477370.png" 
+                                alt="Add icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Add Education
+                        </button>
+                    </div>
+
+                    <!-- Education Item 1 -->
+                    <div class="card bg-background-secondary mb-4 education-item">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1662cab10-1767674607506.png" 
+                                        alt="University icon"
+                                        class="w-6 h-6"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-heading font-semibold text-text-primary mb-1">Bachelor of Science in Computer Science</h4>
+                                    <p class="text-text-secondary mb-2">Stanford University</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary mb-3">
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                                alt="Calendar icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            09/2014 - 06/2018
+                                        </span>
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11407ebac-1766822096581.png" 
+                                                alt="Location icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            Stanford, CA
+                                        </span>
+                                    </div>
+                                    <p class="text-sm text-text-secondary">
+                                        GPA: 3.8/4.0 • Dean's List • Focus on Software Engineering and Artificial Intelligence
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background rounded-lg transition-smooth" aria-label="Edit education">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_139f66eeb-1767354051337.png" 
+                                        alt="Edit icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete education">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Section -->
+                <div class="mt-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-heading font-semibold text-text-primary">Certifications</h3>
+                        <button class="btn btn-outline" id="add-certification-btn">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1025baf95-1767056477370.png" 
+                                alt="Add icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Add Certification
+                        </button>
+                    </div>
+
+                    <!-- Certification Item -->
+                    <div class="card bg-background-secondary mb-4 certification-item">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-start gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-success-100 flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1e2fa2561-1767094105279.png" 
+                                        alt="Certificate icon"
+                                        class="w-6 h-6"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-heading font-semibold text-text-primary mb-1">AWS Certified Solutions Architect - Professional</h4>
+                                    <p class="text-text-secondary mb-2">Amazon Web Services</p>
+                                    <div class="flex items-center gap-2 text-sm text-text-secondary">
+                                        <span class="flex items-center gap-1 font-caption">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                                alt="Calendar icon"
+                                                class="w-4 h-4"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                            Issued: 03/2023
+                                        </span>
+                                        <span class="text-text-tertiary">•</span>
+                                        <span class="font-caption">Expires: 03/2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background rounded-lg transition-smooth" aria-label="Edit certification">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_139f66eeb-1767354051337.png" 
+                                        alt="Edit icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete certification">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Skills -->
+            <div class="tab-content hidden" id="skills-tab">
+                <div class="mb-6">
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-4">Technical Skills</h3>
+                    
+                    <!-- Add Skill Input -->
+                    <div class="mb-6">
+                        <label for="skill-input" class="label">Add New Skill</label>
+                        <div class="flex gap-3">
+                            <div class="flex-1 relative">
+                                <input 
+                                    type="text" 
+                                    id="skill-input" 
+                                    class="input" 
+                                    placeholder="Type skill name (e.g., JavaScript, React, Python)"
+                                >
+                                <!-- Autocomplete Suggestions -->
+                                <div id="skill-suggestions" class="dropdown hidden mt-2 max-h-48">
+                                    <button class="w-full text-left px-4 py-2 hover:bg-background-secondary transition-smooth text-sm">JavaScript</button>
+                                    <button class="w-full text-left px-4 py-2 hover:bg-background-secondary transition-smooth text-sm">Java</button>
+                                    <button class="w-full text-left px-4 py-2 hover:bg-background-secondary transition-smooth text-sm">React</button>
+                                </div>
+                            </div>
+                            <select id="skill-level" class="input w-48">
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced" selected>Advanced</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                            <button class="btn btn-primary" id="add-skill-btn">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1025baf95-1767056477370.png" 
+                                    alt="Add icon"
+                                    class="w-5 h-5"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </button>
+                        </div>
+                        <p class="input-hint">Start typing to see suggestions. Select proficiency level before adding.</p>
+                    </div>
+
+                    <!-- Skills List -->
+                    <div class="space-y-4" id="skills-container">
+                        <!-- Programming Languages -->
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-3">Programming Languages</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="skill-tag">
+                                    <span class="font-caption">JavaScript</span>
+                                    <span class="skill-level expert">Expert</span>
+                                    <button class="skill-remove" aria-label="Remove JavaScript skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Python</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove Python skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">TypeScript</span>
+                                    <span class="skill-level expert">Expert</span>
+                                    <button class="skill-remove" aria-label="Remove TypeScript skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Java</span>
+                                    <span class="skill-level intermediate">Intermediate</span>
+                                    <button class="skill-remove" aria-label="Remove Java skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frameworks & Libraries -->
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-3">Frameworks & Libraries</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="skill-tag">
+                                    <span class="font-caption">React</span>
+                                    <span class="skill-level expert">Expert</span>
+                                    <button class="skill-remove" aria-label="Remove React skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Node.js</span>
+                                    <span class="skill-level expert">Expert</span>
+                                    <button class="skill-remove" aria-label="Remove Node.js skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Express.js</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove Express.js skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Next.js</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove Next.js skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cloud & DevOps -->
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-3">Cloud & DevOps</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="skill-tag">
+                                    <span class="font-caption">AWS</span>
+                                    <span class="skill-level expert">Expert</span>
+                                    <button class="skill-remove" aria-label="Remove AWS skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Docker</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove Docker skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Kubernetes</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove Kubernetes skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">CI/CD</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove CI/CD skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Databases -->
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-3">Databases</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="skill-tag">
+                                    <span class="font-caption">PostgreSQL</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove PostgreSQL skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">MongoDB</span>
+                                    <span class="skill-level advanced">Advanced</span>
+                                    <button class="skill-remove" aria-label="Remove MongoDB skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                                <div class="skill-tag">
+                                    <span class="font-caption">Redis</span>
+                                    <span class="skill-level intermediate">Intermediate</span>
+                                    <button class="skill-remove" aria-label="Remove Redis skill">
+                                        <img 
+                                            src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png" 
+                                            alt="Remove icon"
+                                            class="w-4 h-4"
+                                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Documents -->
+            <div class="tab-content hidden" id="documents-tab">
+                <div class="mb-6">
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-4">Resume & Documents</h3>
+                    
+                    <!-- File Upload Area -->
+                    <div class="card bg-background-secondary border-2 border-dashed border-border-neutral hover:border-primary transition-smooth mb-6" id="upload-area">
+                        <div class="text-center py-12">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1967dbfdc-1767623595298.png" 
+                                alt="Upload cloud icon"
+                                class="w-16 h-16 mx-auto mb-4"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <h4 class="font-heading font-semibold text-text-primary mb-2">Drop your resume here</h4>
+                            <p class="text-sm text-text-secondary mb-4">or click to browse files</p>
+                            <input type="file" id="resume-upload" class="hidden" accept=".pdf,.doc,.docx" multiple>
+                            <button class="btn btn-primary" onclick="document.getElementById('resume-upload').click()">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1967dbfdc-1767623595298.png" 
+                                    alt="Upload icon"
+                                    class="w-5 h-5 mr-2"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                                Choose File
+                            </button>
+                            <p class="text-xs text-text-tertiary mt-3 font-caption">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                        </div>
+                    </div>
+
+                    <!-- Uploaded Documents List -->
+                    <div class="space-y-3" id="documents-list">
+                        <!-- Document Item 1 -->
+                        <div class="card bg-surface flex items-center justify-between document-item">
+                            <div class="flex items-center gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-error-100 flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_17465e1cf-1767278886563.png" 
+                                        alt="PDF file icon"
+                                        class="w-6 h-6"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-heading font-medium text-text-primary text-ellipsis-1">Sarah_Johnson_Resume_2026.pdf</h4>
+                                    <div class="flex items-center gap-3 text-sm text-text-secondary mt-1">
+                                        <span class="font-caption">2.4 MB</span>
+                                        <span class="text-text-tertiary">•</span>
+                                        <span class="font-caption">Uploaded 01/05/2026</span>
+                                        <span class="badge badge-success ml-2">Primary Resume</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Preview document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1ddef3c6b-1765225668015.png" 
+                                        alt="Preview icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Download document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_146cfa0c8-1764649038136.png" 
+                                        alt="Download icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Document Item 2 -->
+                        <div class="card bg-surface flex items-center justify-between document-item">
+                            <div class="flex items-center gap-4 flex-1">
+                                <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1e55edfb7-1767674606868.png" 
+                                        alt="Document file icon"
+                                        class="w-6 h-6"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-heading font-medium text-text-primary text-ellipsis-1">Cover_Letter_Template.docx</h4>
+                                    <div class="flex items-center gap-3 text-sm text-text-secondary mt-1">
+                                        <span class="font-caption">1.2 MB</span>
+                                        <span class="text-text-tertiary">•</span>
+                                        <span class="font-caption">Uploaded 12/28/2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Preview document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1ddef3c6b-1765225668015.png" 
+                                        alt="Preview icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" aria-label="Download document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_146cfa0c8-1764649038136.png" 
+                                        alt="Download icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                                <button class="touch-target p-2 hover:bg-error-50 rounded-lg transition-smooth" aria-label="Delete document">
+                                    <img 
+                                        src="https://img.rocket.new/generatedImages/rocket_gen_img_1d6ad7f1f-1766963844365.png" 
+                                        alt="Delete icon"
+                                        class="w-5 h-5"
+                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="job_listings.html" class="btn btn-primary flex-1 sm:flex-none">
+                <img 
+                    src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" 
+                    alt="Search icon"
+                    class="w-5 h-5 mr-2"
+                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                >
+                Browse Jobs
+            </a>
+            <a href="application_tracking.html" class="btn btn-outline flex-1 sm:flex-none">
+                <img 
+                    src="https://img.rocket.new/generatedImages/rocket_gen_img_13ca38185-1765190592800.png" 
+                    alt="Applications icon"
+                    class="w-5 h-5 mr-2"
+                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                >
+                View Applications
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3B82F6"/>
+                                    <stop offset="1" stop-color="#1E40AF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">JobBoard Pro</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Connecting talented professionals with amazing opportunities since 2020.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Facebook">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1de1c197c-1767382101482.png" alt="Facebook icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Twitter">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12bdddea3-1767674606771.png" alt="Twitter icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="LinkedIn">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aafdc73a-1767674605828.png" alt="LinkedIn icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Job Seekers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Job Seekers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="job_listings.html" class="text-gray-400 hover:text-primary transition-smooth">Browse Jobs</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Create Profile</a></li>
+                        <li><a href="candidate_profile.html" class="text-gray-400 hover:text-primary transition-smooth">My Profile</a></li>
+                        <li><a href="application_tracking.html" class="text-gray-400 hover:text-primary transition-smooth">Track Applications</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Employers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Post a Job</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Employer Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Pricing</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 JobBoard Pro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Toast Notification -->
+    <div id="success-toast" class="fixed bottom-8 right-8 bg-success text-white px-6 py-4 rounded-lg shadow-elevated hidden z-notification">
+        <div class="flex items-center gap-3">
+            <img 
+                src="https://img.rocket.new/generatedImages/rocket_gen_img_16c347df3-1766989217186.png" 
+                alt="Success icon"
+                class="w-6 h-6"
+                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+            >
+            <span class="font-medium">Changes saved successfully!</span>
+        </div>
+    </div>
+
+    <style>
+        /* Skill Tag Styles */
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--color-background-secondary);
+            border: 1px solid var(--color-border-neutral);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base) var(--transition-timing);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--color-primary);
+            background-color: var(--color-primary-50);
+        }
+
+        .skill-level {
+            font-size: 0.75rem;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+
+        .skill-level.beginner {
+            background-color: var(--color-warning-100);
+            color: var(--color-warning-700);
+        }
+
+        .skill-level.intermediate {
+            background-color: var(--color-accent-100);
+            color: var(--color-accent-700);
+        }
+
+        .skill-level.advanced {
+            background-color: var(--color-primary-100);
+            color: var(--color-primary-800);
+        }
+
+        .skill-level.expert {
+            background-color: var(--color-success-100);
+            color: var(--color-success-700);
+        }
+
+        .skill-remove {
+            padding: 0.25rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast) var(--transition-timing);
+        }
+
+        .skill-remove:hover {
+            background-color: var(--color-error-100);
+        }
+
+        /* Accordion Icon Rotation */
+        .mobile-accordion-btn.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-icon {
+            transition: transform var(--transition-base) var(--transition-timing);
+        }
+
+        /* Drag and Drop Styles */
+        #upload-area.drag-over {
+            border-color: var(--color-primary);
+            background-color: var(--color-primary-50);
+        }
+    </style>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Desktop Tab Switching
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'text-primary', 'border-primary');
+                    btn.classList.add('text-text-secondary');
+                });
+                tabContents.forEach(content => content.classList.add('hidden'));
+                
+                // Add active class to clicked button and show corresponding content
+                button.classList.add('active', 'text-primary', 'border-primary');
+                button.classList.remove('text-text-secondary');
+                document.getElementById(`${targetTab}-tab`).classList.remove('hidden');
+            });
+        });
+
+        // Mobile Accordion Switching
+        const accordionButtons = document.querySelectorAll('.mobile-accordion-btn');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                const isActive = button.classList.contains('active');
+                
+                // Close all accordions
+                accordionButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.add('hidden'));
+                
+                // Open clicked accordion if it wasn't active
+                if (!isActive) {
+                    button.classList.add('active');
+                    document.getElementById(`${targetTab}-tab`).classList.remove('hidden');
+                }
+            });
+        });
+
+        // Personal Info Form Submission
+        const personalInfoForm = document.getElementById('personal-info-form');
+        personalInfoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showSuccessToast();
+        });
+
+        // Show Success Toast
+        function showSuccessToast() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Skill Input Autocomplete
+        const skillInput = document.getElementById('skill-input');
+        const skillSuggestions = document.getElementById('skill-suggestions');
+
+        skillInput.addEventListener('input', (e) => {
+            if (e.target.value.length > 0) {
+                skillSuggestions.classList.remove('hidden');
+            } else {
+                skillSuggestions.classList.add('hidden');
+            }
+        });
+
+        // Close suggestions when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!skillInput.contains(e.target) && !skillSuggestions.contains(e.target)) {
+                skillSuggestions.classList.add('hidden');
+            }
+        });
+
+        // Add Skill Button
+        const addSkillBtn = document.getElementById('add-skill-btn');
+        addSkillBtn.addEventListener('click', () => {
+            const skillName = skillInput.value.trim();
+            const skillLevel = document.getElementById('skill-level').value;
+            
+            if (skillName) {
+                // Here you would add the skill to the appropriate category
+                // For demo purposes, just show success toast
+                showSuccessToast();
+                skillInput.value = '';
+            }
+        });
+
+        // Remove Skill Buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.skill-remove')) {
+                const skillTag = e.target.closest('.skill-tag');
+                skillTag.style.opacity = '0';
+                setTimeout(() => {
+                    skillTag.remove();
+                    showSuccessToast();
+                }, 200);
+            }
+        });
+
+        // File Upload - Drag and Drop
+        const uploadArea = document.getElementById('upload-area');
+        const resumeUpload = document.getElementById('resume-upload');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            
+            const files = e.dataTransfer.files;
+            handleFileUpload(files);
+        });
+
+        resumeUpload.addEventListener('change', (e) => {
+            handleFileUpload(e.target.files);
+        });
+
+        function handleFileUpload(files) {
+            // Validate file types and size
+            const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            const maxSize = 5 * 1024 * 1024; // 5MB
+
+            Array.from(files).forEach(file => {
+                if (!validTypes.includes(file.type)) {
+                    alert('Please upload PDF, DOC, or DOCX files only.');
+                    return;
+                }
+                
+                if (file.size > maxSize) {
+                    alert('File size must be less than 5MB.');
+                    return;
+                }
+                
+                // Here you would upload the file to server
+                // For demo purposes, just show success toast
+                showSuccessToast();
+            });
+        }
+
+        // Preview Profile Button
+        const previewProfileBtn = document.getElementById('preview-profile-btn');
+        previewProfileBtn.addEventListener('click', () => {
+            // Here you would open a modal or new page showing profile preview
+            alert('Profile preview would open in a modal or new page');
+        });
+
+        // Add Experience/Education/Certification Buttons
+        document.getElementById('add-experience-btn').addEventListener('click', () => {
+            alert('Add experience form would open in a modal');
+        });
+
+        document.getElementById('add-education-btn').addEventListener('click', () => {
+            alert('Add education form would open in a modal');
+        });
+
+        document.getElementById('add-certification-btn').addEventListener('click', () => {
+            alert('Add certification form would open in a modal');
+        });
+
+        // Edit/Delete Buttons for Experience, Education, Documents
+        document.addEventListener('click', (e) => {
+            const editBtn = e.target.closest('[aria-label*="Edit"]');
+            const deleteBtn = e.target.closest('[aria-label*="Delete"]');
+            const previewBtn = e.target.closest('[aria-label*="Preview"]');
+            const downloadBtn = e.target.closest('[aria-label*="Download"]');
+
+            if (editBtn) {
+                alert('Edit form would open in a modal');
+            }
+            
+            if (deleteBtn) {
+                if (confirm('Are you sure you want to delete this item?')) {
+                    const item = deleteBtn.closest('.experience-item, .education-item, .certification-item, .document-item');
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.remove();
+                        showSuccessToast();
+                    }, 200);
+                }
+            }
+
+            if (previewBtn) {
+                alert('Document preview would open in a modal');
+            }
+
+            if (downloadBtn) {
+                alert('Document download would start');
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

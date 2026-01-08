@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your job applications, monitor status updates, and manage your job search pipeline with JobBoard Pro's comprehensive application tracking system.">
+    <title>Application Tracking - JobBoard Pro</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fjobboardp4887back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface shadow-card sticky top-0 z-navigation">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="landing_page.html" class="flex items-center space-x-3">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1E40AF"/>
+                                    <stop offset="1" stop-color="#3B82F6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-2xl font-heading font-bold text-primary">JobBoard Pro</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary transition-smooth">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-primary font-medium">My Applications</a>
+                    <a href="candidate_profile.html" class="text-text-secondary hover:text-primary transition-smooth">Profile</a>
+                    <button class="btn btn-outline">Sign Out</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden touch-target" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="landing_page.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Home</a>
+                    <a href="job_listings.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Browse Jobs</a>
+                    <a href="application_tracking.html" class="text-primary font-medium py-2">My Applications</a>
+                    <a href="candidate_profile.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Profile</a>
+                    <button class="btn btn-outline w-full">Sign Out</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-heading font-bold text-white mb-2">
+                        Application Tracking
+                    </h1>
+                    <p class="text-lg text-primary-100">
+                        Monitor your job applications and manage your job search pipeline
+                    </p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="btn btn-outline bg-white text-primary hover:bg-primary-50 border-white" id="export-btn">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_146cfa0c8-1764649038136.png" 
+                            alt="Download icon"
+                            class="w-5 h-5 mr-2"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        Export History
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Summary Dashboard -->
+    <section class="py-8 bg-background-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Total Applications -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11fbc7e1b-1767269431933.png" 
+                                alt="Total applications icon"
+                                class="w-6 h-6"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <span class="text-xs text-text-tertiary font-caption">Last 30 days</span>
+                    </div>
+                    <h3 class="text-3xl font-heading font-bold text-text-primary mb-1">24</h3>
+                    <p class="text-sm text-text-secondary font-caption">Total Applications</p>
+                </div>
+
+                <!-- Response Rate -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-success-100 flex items-center justify-center">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1a918b303-1767674616079.png" 
+                                alt="Response rate icon"
+                                class="w-6 h-6"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <span class="text-xs text-success font-caption">+12%</span>
+                    </div>
+                    <h3 class="text-3xl font-heading font-bold text-text-primary mb-1">67%</h3>
+                    <p class="text-sm text-text-secondary font-caption">Response Rate</p>
+                    <div class="mt-3 w-full bg-background-secondary rounded-full h-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 67%"></div>
+                    </div>
+                </div>
+
+                <!-- Interview Conversion -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-accent-100 flex items-center justify-center">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1631bf6c4-1767674616119.png" 
+                                alt="Interview conversion icon"
+                                class="w-6 h-6"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <span class="text-xs text-accent font-caption">+8%</span>
+                    </div>
+                    <h3 class="text-3xl font-heading font-bold text-text-primary mb-1">42%</h3>
+                    <p class="text-sm text-text-secondary font-caption">Interview Conversion</p>
+                    <div class="mt-3 w-full bg-background-secondary rounded-full h-2">
+                        <div class="bg-accent h-2 rounded-full" style="width: 42%"></div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Interviews -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-warning-100 flex items-center justify-center">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1a718fa6f-1766126792812.png" 
+                                alt="Upcoming interviews icon"
+                                class="w-6 h-6"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </div>
+                        <span class="text-xs text-warning font-caption">This week</span>
+                    </div>
+                    <h3 class="text-3xl font-heading font-bold text-text-primary mb-1">3</h3>
+                    <p class="text-sm text-text-secondary font-caption">Upcoming Interviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Interviews Section -->
+    <section class="py-8 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-heading font-bold text-text-primary">Upcoming Interviews</h2>
+                <a href="javascript:void(0)" class="text-sm text-primary hover:text-primary-700 transition-smooth font-caption">
+                    View Calendar
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Interview Card 1 -->
+                <div class="card border-l-4 border-l-primary">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1f8099e2c-1767674606213.png" 
+                                    alt="TechCorp company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-lg text-text-primary mb-1">Senior Software Engineer</h3>
+                                <p class="text-sm text-text-secondary font-caption">TechCorp Inc.</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-primary">Round 2</span>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                alt="Calendar icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">Monday, January 8, 2026</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_10a301dcf-1767101029048.png" 
+                                alt="Clock icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">2:00 PM - 3:00 PM PST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c4e6eb46-1767674606009.png" 
+                                alt="Video call icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">Video Interview (Zoom)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button class="btn btn-primary flex-1">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                alt="Add to calendar icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Add to Calendar
+                        </button>
+                        <button class="btn btn-outline">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_149f981e3-1767674605586.png" 
+                                alt="Preparation resources icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interview Card 2 -->
+                <div class="card border-l-4 border-l-accent">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7f73fc6-1767674606208.png" 
+                                    alt="DataFlow Solutions company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-lg text-text-primary mb-1">Product Manager</h3>
+                                <p class="text-sm text-text-secondary font-caption">DataFlow Solutions</p>
+                            </div>
+                        </div>
+                        <span class="badge badge-success">Round 1</span>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                alt="Calendar icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">Wednesday, January 10, 2026</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_10a301dcf-1767101029048.png" 
+                                alt="Clock icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">10:00 AM - 11:00 AM EST</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_137b8d5d3-1767674605620.png" 
+                                alt="Office location icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span class="text-sm text-text-secondary font-caption">On-site - New York Office</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button class="btn btn-primary flex-1">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" 
+                                alt="Add to calendar icon"
+                                class="w-5 h-5 mr-2"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            Add to Calendar
+                        </button>
+                        <button class="btn btn-outline">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_149f981e3-1767674605586.png" 
+                                alt="Preparation resources icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application History Section -->
+    <section class="py-8 bg-background-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <h2 class="text-2xl font-heading font-bold text-text-primary">Application History</h2>
+                
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-3">
+                    <div class="relative">
+                        <button class="btn btn-outline flex items-center gap-2" id="status-filter-btn">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_174ff6fc5-1765384100032.png" 
+                                alt="Filter icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span>Filter by Status</span>
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png" 
+                                alt="Dropdown arrow"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                        <div id="status-filter-dropdown" class="hidden dropdown mt-2 w-56 p-2">
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="all">All Applications (24)</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="applied">Applied (8)</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="under-review">Under Review (6)</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="interview">Interview Scheduled (5)</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="decision">Decision Pending (3)</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-status="rejected">Not Selected (2)</button>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button class="btn btn-outline flex items-center gap-2" id="sort-filter-btn">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_11d73560a-1766499825938.png" 
+                                alt="Sort icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                            <span>Sort By</span>
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png" 
+                                alt="Dropdown arrow"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                        <div id="sort-filter-dropdown" class="hidden dropdown mt-2 w-56 p-2">
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-sort="date-desc">Newest First</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-sort="date-asc">Oldest First</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-sort="company">Company Name</button>
+                            <button class="w-full text-left px-4 py-2 hover:bg-background-secondary rounded transition-smooth text-sm" data-sort="position">Position Title</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-ghost flex items-center gap-2" id="reset-filters-btn">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1565d94f2-1764648755125.png" 
+                            alt="Reset filters icon"
+                            class="w-5 h-5"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop Table View -->
+            <div class="hidden lg:block card overflow-hidden p-0">
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Company & Position</th>
+                                <th>Application Date</th>
+                                <th>Status</th>
+                                <th>Next Steps</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applications-table-body">
+                            <!-- Application Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1f8099e2c-1767674606213.png" 
+                                                alt="TechCorp company logo"
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold text-text-primary">Senior Software Engineer</h4>
+                                            <p class="text-sm text-text-secondary font-caption">TechCorp Inc.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">12/28/2025</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-primary">Interview Scheduled</span>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">Technical Interview - Jan 8</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="View Job">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c0ec927f-1767674617653.png" 
+                                                alt="View job icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="Add Note">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                                alt="Add note icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="More Options">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                                alt="More options icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Application Row 2 -->
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7f73fc6-1767674606208.png" 
+                                                alt="DataFlow Solutions company logo"
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold text-text-primary">Product Manager</h4>
+                                            <p class="text-sm text-text-secondary font-caption">DataFlow Solutions</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">12/30/2025</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Under Review</span>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">Awaiting HR Response</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="View Job">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c0ec927f-1767674617653.png" 
+                                                alt="View job icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="Add Note">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                                alt="Add note icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="More Options">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                                alt="More options icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Application Row 3 -->
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_15ec6baf4-1766854309684.png" 
+                                                alt="DesignHub Studio company logo"
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold text-text-primary">UX/UI Designer</h4>
+                                            <p class="text-sm text-text-secondary font-caption">DesignHub Studio</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">01/02/2026</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-warning">Decision Pending</span>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">Final Round Complete</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="View Job">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c0ec927f-1767674617653.png" 
+                                                alt="View job icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="Add Note">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                                alt="Add note icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="More Options">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                                alt="More options icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Application Row 4 -->
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_17f54649f-1767674609275.png" 
+                                                alt="CloudScale Systems company logo"
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold text-text-primary">DevOps Engineer</h4>
+                                            <p class="text-sm text-text-secondary font-caption">CloudScale Systems</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">01/03/2026</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-primary">Applied</span>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">Application Submitted</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="View Job">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c0ec927f-1767674617653.png" 
+                                                alt="View job icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="Add Note">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                                alt="Add note icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="More Options">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                                alt="More options icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Application Row 5 -->
+                            <tr>
+                                <td>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ea1162c3-1767263517797.png" 
+                                                alt="MarketPro Agency company logo"
+                                                class="w-full h-full object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </div>
+                                        <div>
+                                            <h4 class="font-heading font-semibold text-text-primary">Digital Marketing Manager</h4>
+                                            <p class="text-sm text-text-secondary font-caption">MarketPro Agency</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">01/04/2026</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Under Review</span>
+                                </td>
+                                <td>
+                                    <span class="text-sm text-text-secondary font-caption">Resume Screening</span>
+                                </td>
+                                <td>
+                                    <div class="flex items-center gap-2">
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="View Job">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1c0ec927f-1767674617653.png" 
+                                                alt="View job icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="Add Note">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                                alt="Add note icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth" title="More Options">
+                                            <img 
+                                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                                alt="More options icon"
+                                                class="w-5 h-5"
+                                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                            >
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mobile Card View -->
+            <div class="lg:hidden space-y-4" id="applications-mobile-view">
+                <!-- Application Card 1 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1f8099e2c-1767674606213.png" 
+                                    alt="TechCorp company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-text-primary mb-1">Senior Software Engineer</h3>
+                                <p class="text-sm text-text-secondary font-caption">TechCorp Inc.</p>
+                            </div>
+                        </div>
+                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                alt="More options icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Applied</span>
+                            <span class="text-sm text-text-secondary font-caption">12/28/2025</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Status</span>
+                            <span class="badge badge-primary">Interview Scheduled</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Next Steps</span>
+                            <span class="text-sm text-text-primary font-caption">Technical Interview - Jan 8</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1">View Job</button>
+                        <button class="btn btn-ghost">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                alt="Add note icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Application Card 2 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1d7f73fc6-1767674606208.png" 
+                                    alt="DataFlow Solutions company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-text-primary mb-1">Product Manager</h3>
+                                <p class="text-sm text-text-secondary font-caption">DataFlow Solutions</p>
+                            </div>
+                        </div>
+                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                alt="More options icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Applied</span>
+                            <span class="text-sm text-text-secondary font-caption">12/30/2025</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Status</span>
+                            <span class="badge badge-success">Under Review</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Next Steps</span>
+                            <span class="text-sm text-text-primary font-caption">Awaiting HR Response</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1">View Job</button>
+                        <button class="btn btn-ghost">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                alt="Add note icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Application Card 3 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_15ec6baf4-1766854309684.png" 
+                                    alt="DesignHub Studio company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-text-primary mb-1">UX/UI Designer</h3>
+                                <p class="text-sm text-text-secondary font-caption">DesignHub Studio</p>
+                            </div>
+                        </div>
+                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                alt="More options icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Applied</span>
+                            <span class="text-sm text-text-secondary font-caption">01/02/2026</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Status</span>
+                            <span class="badge badge-warning">Decision Pending</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Next Steps</span>
+                            <span class="text-sm text-text-primary font-caption">Final Round Complete</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1">View Job</button>
+                        <button class="btn btn-ghost">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                alt="Add note icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Application Card 4 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_17f54649f-1767674609275.png" 
+                                    alt="CloudScale Systems company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-text-primary mb-1">DevOps Engineer</h3>
+                                <p class="text-sm text-text-secondary font-caption">CloudScale Systems</p>
+                            </div>
+                        </div>
+                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                alt="More options icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Applied</span>
+                            <span class="text-sm text-text-secondary font-caption">01/03/2026</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Status</span>
+                            <span class="badge badge-primary">Applied</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Next Steps</span>
+                            <span class="text-sm text-text-primary font-caption">Application Submitted</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1">View Job</button>
+                        <button class="btn btn-ghost">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                alt="Add note icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Application Card 5 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0 bg-background-secondary">
+                                <img 
+                                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1ea1162c3-1767263517797.png" 
+                                    alt="MarketPro Agency company logo"
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                                >
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-semibold text-text-primary mb-1">Digital Marketing Manager</h3>
+                                <p class="text-sm text-text-secondary font-caption">MarketPro Agency</p>
+                            </div>
+                        </div>
+                        <button class="touch-target p-2 hover:bg-background-secondary rounded-lg transition-smooth">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_16b444bc6-1766488847077.png" 
+                                alt="More options icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Applied</span>
+                            <span class="text-sm text-text-secondary font-caption">01/04/2026</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Status</span>
+                            <span class="badge badge-success">Under Review</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary font-caption">Next Steps</span>
+                            <span class="text-sm text-text-primary font-caption">Resume Screening</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline flex-1">View Job</button>
+                        <button class="btn btn-ghost">
+                            <img 
+                                src="https://img.rocket.new/generatedImages/rocket_gen_img_1ae1540ef-1767421420428.png" 
+                                alt="Add note icon"
+                                class="w-5 h-5"
+                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                            >
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="mt-8 text-center">
+                <button class="btn btn-outline">
+                    Load More Applications
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Notification Preferences -->
+    <section class="py-8 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="card max-w-3xl mx-auto">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-lg bg-accent-100 flex items-center justify-center">
+                        <img 
+                            src="https://img.rocket.new/generatedImages/rocket_gen_img_1cada9e1f-1767446161189.png" 
+                            alt="Notification preferences icon"
+                            class="w-6 h-6"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+                        >
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-heading font-bold text-text-primary">Notification Preferences</h2>
+                        <p class="text-sm text-text-secondary font-caption">Customize your application status alerts</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between py-3 border-b border-border-light">
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-1">Application Status Updates</h4>
+                            <p class="text-sm text-text-secondary font-caption">Get notified when your application status changes</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-background-secondary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between py-3 border-b border-border-light">
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-1">Interview Reminders</h4>
+                            <p class="text-sm text-text-secondary font-caption">Receive reminders 24 hours before scheduled interviews</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-background-secondary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between py-3 border-b border-border-light">
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-1">New Job Matches</h4>
+                            <p class="text-sm text-text-secondary font-caption">Get alerts for jobs matching your profile</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-background-secondary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between py-3">
+                        <div>
+                            <h4 class="font-heading font-medium text-text-primary mb-1">Weekly Summary</h4>
+                            <p class="text-sm text-text-secondary font-caption">Receive a weekly digest of your application activity</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-background-secondary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-border-light">
+                    <button class="btn btn-primary">
+                        Save Preferences
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3B82F6"/>
+                                    <stop offset="1" stop-color="#1E40AF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-xl font-heading font-bold">JobBoard Pro</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Connecting talented professionals with amazing opportunities since 2020.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Facebook">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1de1c197c-1767382101482.png" alt="Facebook icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="Twitter">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12bdddea3-1767674606771.png" alt="Twitter icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth" aria-label="LinkedIn">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aafdc73a-1767674605828.png" alt="LinkedIn icon" class="w-6 h-6" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Job Seekers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Job Seekers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="job_listings.html" class="text-gray-400 hover:text-primary transition-smooth">Browse Jobs</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Create Profile</a></li>
+                        <li><a href="candidate_profile.html" class="text-gray-400 hover:text-primary transition-smooth">My Profile</a></li>
+                        <li><a href="application_tracking.html" class="text-gray-400 hover:text-primary transition-smooth">Track Applications</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Employers -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">For Employers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Post a Job</a></li>
+                        <li><a href="user_registration.html" class="text-gray-400 hover:text-primary transition-smooth">Employer Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Pricing</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">About Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-smooth">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 JobBoard Pro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter dropdowns
+        const statusFilterBtn = document.getElementById('status-filter-btn');
+        const statusFilterDropdown = document.getElementById('status-filter-dropdown');
+        const sortFilterBtn = document.getElementById('sort-filter-btn');
+        const sortFilterDropdown = document.getElementById('sort-filter-dropdown');
+
+        statusFilterBtn.addEventListener('click', () => {
+            statusFilterDropdown.classList.toggle('hidden');
+            sortFilterDropdown.classList.add('hidden');
+        });
+
+        sortFilterBtn.addEventListener('click', () => {
+            sortFilterDropdown.classList.toggle('hidden');
+            statusFilterDropdown.classList.add('hidden');
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!statusFilterBtn.contains(e.target) && !statusFilterDropdown.contains(e.target)) {
+                statusFilterDropdown.classList.add('hidden');
+            }
+            if (!sortFilterBtn.contains(e.target) && !sortFilterDropdown.contains(e.target)) {
+                sortFilterDropdown.classList.add('hidden');
+            }
+        });
+
+        // Reset filters
+        const resetFiltersBtn = document.getElementById('reset-filters-btn');
+        resetFiltersBtn.addEventListener('click', () => {
+            console.log('Filters reset');
+            // Reset filter logic would go here
+        });
+
+        // Export functionality
+        const exportBtn = document.getElementById('export-btn');
+        exportBtn.addEventListener('click', () => {
+            console.log('Exporting application history...');
+            // Export logic would go here
+        });
+
+        // Filter button handlers
+        document.querySelectorAll('[data-status]').forEach(button => {
+            button.addEventListener('click', () => {
+                const status = button.getAttribute('data-status');
+                console.log('Filtering by status:', status);
+                statusFilterDropdown.classList.add('hidden');
+                // Filter logic would go here
+            });
+        });
+
+        document.querySelectorAll('[data-sort]').forEach(button => {
+            button.addEventListener('click', () => {
+                const sort = button.getAttribute('data-sort');
+                console.log('Sorting by:', sort);
+                sortFilterDropdown.classList.add('hidden');
+                // Sort logic would go here
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

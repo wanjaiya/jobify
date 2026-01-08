@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+@include('layouts.front.head')
+
+<body class="font-sans text-gray-900 antialiased">
+    @include('layouts.front.navbar')
+    
+
+
+        <div class="w-full ">
+            {{ $slot }}
+        </div>
+    
+
+
+    @include('layouts.front.scripts')
+
+    @yield('scripts')
+
+</body>
+
+</html>
