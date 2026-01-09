@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
         $candidate->permissions()->sync(Permission::whereIn('slug', ['view-profile'])->pluck('id'));
 
        $user =  User::factory()->create([
-            'name' => 'Admin Jobify',
-            'email' => 'admin@jobify.com',
-            'password' => bcrypt('GoJobify123!'),
+            'name' => 'Admin Staff Link',
+            'email' => 'admin@staff-link.com',
+            'password' => bcrypt('K$ndi@26!'),
             'phone_number' => '1234567890',
             'published' => 1,
             'email_verified_at' => now(),
