@@ -1,35 +1,21 @@
 <header class="bg-surface shadow-card sticky top-0 z-navigation">
     <nav class="mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+        <div class="flex justify-between items-center h-24">
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="landing_page.html" class="flex items-center space-x-3">
-                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
-                        <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5"
-                            stroke-linecap="round" />
-                        <defs>
-                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40"
-                                y2="40" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#1E40AF" />
-                                <stop offset="1" stop-color="#3B82F6" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span
-                        class="text-2xl font-heading font-bold text-primary">{{ config('app.name', 'Jobify Kenya') }}</span>
+                   <img src="{{ asset('/images/logo.png') }}" class="h-24 w-auto" />
                 </a>
             </div>
 
             <!-- Desktop Navigation -->
             @guest
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ url('/') }}"
-                        class="text-primary font-medium hover:text-primary-700 transition-smooth">Home</a>
-                    <a href="#" class="text-text-secondary hover:text-primary transition-smooth">Browse Jobs</a>
-                    <a href="#" class="text-text-secondary hover:text-primary transition-smooth">For Employers</a>
-                    <a href="{{ route('register') }}" class="btn btn-outline">Sign Up</a>
-                    <a href="{{ route('login') }}" class="btn btn-primary">Sign In</a>
+                    <a href="{{ url('/') }}" class="text-primary-900 font-medium hover:text-primary-700 transition-smooth">Home</a>
+                    <a href="#" class="text-text-secondary  hover:text-primary-700 transition-smooth">Browse Jobs</a>
+                    <a href="#" class="text-text-secondary  hover:text-primary-700 transition-smooth">For Employers</a>
+                    <a href="{{ route('register') }}" class="btn border-primary border hover:bg-primary-700 hover:text-white">Sign Up</a>
+                    <a href="{{ route('login') }}" class="btn bg-primary text-white border border-primary hover:bg-primary-700">Sign In</a>
                 </div>
             @else
                 <div class="hidden md:flex items-center space-x-8">

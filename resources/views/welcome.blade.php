@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <!-- Hero Section with Search -->
-    <section class="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-primary-800 via-primary-800 to-primary-900 overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <!-- Job Title/Keywords -->
                         <div class="md:col-span-1">
-                            <label for="search-keywords" class="label text-text-secondary">Job Title or Keywords</label>
+                            <label for="search-keywords" class="label text-secondary">Job Title or Keywords</label>
                             <div class="relative">
                                 <input type="text" id="search-keywords" class="input pl-12"
                                     placeholder="e.g. Software Engineer" autocomplete="off">
@@ -41,7 +41,7 @@
 
                         <!-- Location -->
                         <div class="md:col-span-1">
-                            <label for="search-location" class="label text-text-secondary">Location</label>
+                            <label for="search-location" class="label text-secondary">Location</label>
                             <div class="relative">
                                 <input type="text" id="search-location" class="input pl-12"
                                     placeholder="City, State or Remote" autocomplete="off">
@@ -54,9 +54,7 @@
                         <!-- Search Button -->
                         <div class="md:col-span-1 flex items-end">
                             <button type="submit" class="btn btn-primary w-full">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png"
-                                    alt="Search icon" class="w-5 h-5 mr-2"
-                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                               
                                 Search Jobs
                             </button>
                         </div>
@@ -83,21 +81,21 @@
             <!-- Trust Signals -->
             <div class="mt-16 flex flex-wrap justify-center items-center gap-8 text-primary-100">
                 <div class="flex items-center gap-2">
-                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_101a09604-1767674609374.png"
+                    {{-- <img src="https://img.rocket.new/generatedImages/rocket_gen_img_101a09604-1767674609374.png"
                         alt="SSL security badge" class="w-6 h-6"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"> --}}
                     <span class="text-sm font-caption">SSL Secured</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a49e72da-1767674605842.png"
+                    {{-- <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a49e72da-1767674605842.png"
                         alt="Verified employers badge" class="w-6 h-6"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"> --}}
                     <span class="text-sm font-caption">Verified Employers</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b7a6860e-1765745957340.png"
+                    {{-- <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b7a6860e-1765745957340.png"
                         alt="Trusted platform badge" class="w-6 h-6"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"> --}}
                     <span class="text-sm font-caption">Trusted by 50K+ Users</span>
                 </div>
             </div>
@@ -929,103 +927,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-text-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Company Info -->
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
-                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5"
-                                stroke-linecap="round" />
-                            <defs>
-                                <linearGradient id="footer-logo-gradient" x1="0" y1="0"
-                                    x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#3B82F6" />
-                                    <stop offset="1" stop-color="#1E40AF" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <span class="text-xl font-heading font-bold">JobBoard Pro</span>
-                    </div>
-                    <p class="text-sm text-gray-400 mb-4">
-                        Connecting talented professionals with amazing opportunities since 2020.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth"
-                            aria-label="Facebook">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1de1c197c-1767382101482.png"
-                                alt="Facebook icon" class="w-6 h-6"
-                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
-                        </a>
-                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth"
-                            aria-label="Twitter">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12bdddea3-1767674606771.png"
-                                alt="Twitter icon" class="w-6 h-6"
-                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
-                        </a>
-                        <a href="javascript:void(0)" class="hover:text-primary transition-smooth"
-                            aria-label="LinkedIn">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aafdc73a-1767674605828.png"
-                                alt="LinkedIn icon" class="w-6 h-6"
-                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
-                        </a>
-                    </div>
-                </div>
-
-                <!-- For Job Seekers -->
-                <div>
-                    <h4 class="font-heading font-semibold mb-4">For Job Seekers</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="job_listings.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">Browse Jobs</a></li>
-                        <li><a href="user_registration.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">Create Profile</a></li>
-                        <li><a href="candidate_profile.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">My Profile</a></li>
-                        <li><a href="application_tracking.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">Track Applications</a></li>
-                    </ul>
-                </div>
-
-                <!-- For Employers -->
-                <div>
-                    <h4 class="font-heading font-semibold mb-4">For Employers</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="user_registration.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">Post a Job</a></li>
-                        <li><a href="user_registration.html"
-                                class="text-gray-400 hover:text-primary transition-smooth">Employer Dashboard</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">Pricing</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">Resources</a></li>
-                    </ul>
-                </div>
-
-                <!-- Company -->
-                <div>
-                    <h4 class="font-heading font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">About Us</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">Contact</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">Privacy Policy</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-400 hover:text-primary transition-smooth">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                <p>© 2026 JobBoard Pro. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+ 
 
 
 </x-guest-layout>

@@ -4,7 +4,7 @@
   
 
     <div class="min-h-screen w-full">
-        <div class="grid lg:grid-cols-5 md:grid-cols-2 items-center gap-y-4 h-full">
+        <div class="flex items-center justify-center">
             {{-- <div
                 class="max-md:order-1 lg:col-span-3 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
                 <img src="https://readymadeui.com/signin-image.webp"
@@ -19,7 +19,7 @@
                         <h1 class="text-slate-900 text-3xl font-bold">Create an account</h1>
                         <p class="text-[15px] mt-6 text-slate-600">Already have an account? <a
                                 href="{{ route('login') }}"
-                                class="text-blue-600 font-medium hover:underline ml-1 whitespace-nowrap">Login here</a>
+                                class="text-primary-600 font-medium hover:underline ml-1 whitespace-nowrap">Login here</a>
                         </p>
                     </div>
 
@@ -30,7 +30,7 @@
 
 
                                 <input id="name"
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     type="text" name="name" :value="old('name')" required autofocus
                                     autocomplete="name" placeholder="Enter full name" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
@@ -50,7 +50,7 @@
                             <div class="relative flex items-center">
 
                                 <input id="email"
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter email" type="email" name="email" :value="old('email')"
                                     required autocomplete="username" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
@@ -79,7 +79,7 @@
                             <div class="relative flex items-center">
 
                                 <input id="phone_number"
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter phone number" type="tel" name="phone_number"
                                     :value="old('phone_number')" required autocomplete="phone_number" />
                                
@@ -91,7 +91,7 @@
                             <label class="text-slate-900 text-[15px] font-medium mb-2 block">Password</label>
                             <div class="relative flex items-center">
                                 <input name="password" type="password" required
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter password" />
                                 <div class="input-group-append pass-view">
                                     <i class="far fa-eye"></i>
@@ -106,7 +106,7 @@
                                 Confirmation</label>
                             <div class="relative flex items-center">
                                 <input name="password_confirmation" type="password" required
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter password confirmation" />
                                 <div class="input-group-append pass-view pass-view-confirm">
                                     <i class="far fa-eye"></i>
@@ -121,7 +121,7 @@
 
                     <div class="mt-12">
                         <button type="submit"
-                            class="w-full py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer">
+                            class="w-full py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-primary hover:bg-primary-800 focus:outline-none cursor-pointer">
                             Register
                         </button>
                     </div>

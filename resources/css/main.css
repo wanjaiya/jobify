@@ -564,27 +564,27 @@ video {
 
 :root {
   /* Primary Colors - Deep Professional Blue */
-  --color-primary: #1E40AF;
-  /* blue-800 */
-  --color-primary-50: #EFF6FF;
+  --color-primary: #7a0000;
+
+  --color-primary-50: #ffeeee;
   /* blue-50 */
-  --color-primary-100: #DBEAFE;
+  --color-primary-100: #ffdada;
   /* blue-100 */
-  --color-primary-200: #BFDBFE;
+  --color-primary-200: #ffbbbb;
   /* blue-200 */
-  --color-primary-300: #93C5FD;
+  --color-primary-300: #ff8b8b;
   /* blue-300 */
-  --color-primary-400: #60A5FA;
+  --color-primary-400: #ff4949;
   /* blue-400 */
-  --color-primary-500: #3B82F6;
+  --color-primary-500: #ff1111;
   /* blue-500 */
-  --color-primary-600: #2563EB;
+  --color-primary-600: #ff0000;
   /* blue-600 */
-  --color-primary-700: #1D4ED8;
+  --color-primary-700: #e70000;
   /* blue-700 */
-  --color-primary-800: #1E40AF;
+  --color-primary-800: #be0000;
   /* blue-800 */
-  --color-primary-900: #1E3A8A;
+  --color-primary-900: #7a0000;
   /* blue-900 */
   --color-primary-foreground: #FFFFFF;
   /* Secondary Colors - Accessible Interactive Blue */
@@ -712,6 +712,29 @@ video {
   --color-border-neutral: rgba(107, 114, 128, 0.2);
   /* gray with opacity */
   --color-border-light: rgba(107, 114, 128, 0.1);
+
+    --color-site: #7a0000;
+  /* blue-800 */
+  --color-site-50: #ffeeee;
+  /* blue-50 */
+  --color-site-100: #ffdada;
+  /* blue-100 */
+  --color-site-200: #ffbbbb;
+  /* blue-200 */
+  --color-site-300: #ff8b8b;
+  /* blue-300 */
+  --color-site-400: #ff4949;
+  /* blue-400 */
+  --color-site-500: #ff1111;
+  /* blue-500 */
+  --color-site-600: #ff0000;
+  /* blue-600 */
+  --color-site-700: #e70000;
+  /* blue-700 */
+  --color-site-800: #be0000;
+  /* blue-800 */
+  --color-site-900: #7a0000;
+
   /* lighter gray */
   /* Shadow Colors */
   --shadow-primary: rgba(30, 64, 175, 0.08);
@@ -2741,3 +2764,5 @@ p {
     line-height: 1;
   }
 }
+
+

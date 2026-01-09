@@ -1,3 +1,80 @@
+
+
+:root {
+  --color-primary: #7a0000;
+
+  --color-primary-50: #ffeeee;
+  /* blue-50 */
+  --color-primary-100: #ffdada;
+  /* blue-100 */
+  --color-primary-200: #ffbbbb;
+  /* blue-200 */
+  --color-primary-300: #ff8b8b;
+  /* blue-300 */
+  --color-primary-400: #ff4949;
+  /* blue-400 */
+  --color-primary-500: #ff1111;
+  /* blue-500 */
+  --color-primary-600: #ff0000;
+  /* blue-600 */
+  --color-primary-700: #e70000;
+  /* blue-700 */
+  --color-primary-800: #be0000;
+  /* blue-800 */
+  --color-primary-900: #7a0000;
+
+ 
+  /* ... */
+}
+
+
+.btn-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(122, 0, 0);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.btn-primary:hover{
+  --tw-translate-y: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-shadow: 0 4px 8px rgba(30, 64, 175, 0.08);
+  --tw-shadow-colored: 0 4px 8px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: 0 4px 8px var(--shadow-primary);
+}
+
+.btn-primary:active{
+  --tw-scale-x: 0.97;
+  --tw-scale-y: 0.97;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.btn-outline{
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(122, 0, 0 );
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(122, 0, 0 / var(--tw-text-opacity, 1));
+}
+
+.btn-outline:hover{
+  --tw-translate-y: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(122, 0, 0 );
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.btn-outline:active{
+  --tw-scale-x: 0.97;
+  --tw-scale-y: 0.97;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,3 +91,4 @@
   z-index: 3;
   padding: 0.7rem;
 }
+

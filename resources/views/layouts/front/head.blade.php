@@ -19,6 +19,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
+      @vite('resources/css/main.css')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @vite('resources/css/main.css')
+  
 </head>

@@ -13,7 +13,7 @@
         </div>
     </div>
 
-
+    @include('layouts.front.footer')
     @include('layouts.front.scripts')
 
     @yield('scripts')
