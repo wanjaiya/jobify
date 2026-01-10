@@ -3,27 +3,26 @@
         <div class="flex justify-between items-center h-24">
             <!-- Logo -->
             <div class="flex items-center">
-                <a href="landing_page.html" class="flex items-center space-x-3">
-                   <img src="{{ asset('/images/logo.png') }}" class="h-24 w-auto" />
+                <a href="{{ url('/') }}" class="flex items-center space-x-3">
+                    <img src="{{ asset('/images/logo.png') }}" class="h-24 w-auto" />
                 </a>
             </div>
 
             <!-- Desktop Navigation -->
-            @guest
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ url('/') }}" class="text-primary-900 font-medium hover:text-primary-700 transition-smooth">Home</a>
-                    <a href="#" class="text-text-secondary  hover:text-primary-700 transition-smooth">Browse Jobs</a>
-                    <a href="#" class="text-text-secondary  hover:text-primary-700 transition-smooth">For Employers</a>
-                    <a href="{{ route('register') }}" class="btn border-primary border hover:bg-primary-700 hover:text-white">Sign Up</a>
-                    <a href="{{ route('login') }}" class="btn bg-primary text-white border border-primary hover:bg-primary-700">Sign In</a>
-                </div>
-            @else
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="job_listings.html" class="text-text-secondary hover:text-primary transition-smooth">Browse
-                        Jobs</a>
-                    <a href="application_tracking.html" class="text-text-secondary hover:text-primary transition-smooth">My
-                        Applications</a>
-                    <a href="candidate_profile.html" class="text-primary font-medium">My Profile</a>
+            <div class="hidden md:flex items-center space-x-8">
+
+
+                @foreach (mainMenu() as $menu)
+                    <a href="#"
+                        class="text-text-secondary  hover:text-primary-700 transition-smooth">{{ $menu->name }}</a>
+                @endforeach
+
+                @guest
+                    <a href="{{ route('register') }}"
+                        class="btn border-primary border hover:bg-primary-700 hover:text-white">Sign Up</a>
+                    <a href="{{ route('login') }}"
+                        class="btn bg-primary text-white border border-primary hover:bg-primary-700">Sign In</a>
+                @else
                     <div class="relative group">
                         <button
                             class="flex items-center gap-2 text-text-secondary hover:text-primary transition-smooth touch-target"
@@ -60,8 +59,10 @@
                             </form>
                         </div>
                     </div>
-                </div>
-            @endguest
+
+                @endguest
+
+            </div>
 
             <!-- Mobile Menu Button -->
             <button class="md:hidden touch-target" id="mobile-menu-btn" aria-label="Toggle mobile menu">
@@ -73,28 +74,17 @@
 
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden pb-4">
-            @guest
-                <div class="flex flex-col space-y-3">
-                    <a href="{{ url('/') }}" class="text-primary font-medium py-2">Home</a>
-                    <a href="#" class="text-text-secondary hover:text-primary py-2 transition-smooth">Browse Jobs</a>
-                    <a href="#" class="text-text-secondary hover:text-primary py-2 transition-smooth">For
-                        Employers</a>
+            <div class="flex flex-col space-y-3">
+
+                @foreach (mainMenu() as $menu)
+                    <a href="#"
+                        class="text-text-secondary hover:text-primary py-2 transition-smooth">{{ $menu->name }}</a>
+                @endforeach
+
+                @guest
                     <a href="{{ route('register') }}" class="btn btn-outline w-full">Sign Up</a>
                     <a href="{{ route('login') }}" class="btn btn-primary w-full">Sign In</a>
-                </div>
-            @else
-                <div class="flex flex-col space-y-3">
-                    <a href="job_listings.html" class="text-text-secondary hover:text-primary py-2 transition-smooth">Browse
-                        Jobs</a>
-                    <a href="application_tracking.html"
-                        class="text-text-secondary hover:text-primary py-2 transition-smooth">My Applications</a>
-                    <a href="candidate_profile.html" class="text-primary font-medium py-2">My Profile</a>
-                    <hr class="border-border-light">
-                    <a href="candidate_profile.html"
-                        class="text-text-secondary hover:text-primary py-2 transition-smooth">Profile Settings</a>
-                    <a href="javascript:void(0)"
-                        class="text-text-secondary hover:text-primary py-2 transition-smooth">Account Settings</a>
-
+                @else
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a :href="route('logout')"
@@ -103,9 +93,10 @@
                             class="text-error hover:text-error-700 py-2 transition-smooth cursor-pointer">
                             {{ __('Log Out') }} </a>
                     </form>
-                </div>
 
-            @endguest
+
+                @endguest
+            </div>
         </div>
     </nav>
 </header>

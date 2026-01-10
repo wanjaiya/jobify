@@ -4,9 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 dark:text-white text-gray-800 text-2xl font-semibold">
-                        {{ config('app.name', 'Task Forge') }}
+                <div class="shrink-0 flex items-center py-4 px-4">
+                    <a href="{{ route('dashboard') }}" class="flex items-center space-x-3 dark:text-white text-gray-800 text-2xl font-semibold ">
+                         <img src="{{ asset('/images/logo.png') }}" class="h-24 w-auto" />
                     </a>
                 </div>
 

@@ -32,8 +32,8 @@ class AuthServiceProvider extends ServiceProvider
         $user->hasPermissions('manage-users')
         );
 
-        Gate::define('manage-workflows', fn ($user) =>
-        $user->hasPermissions('manage-workflows')
+        Gate::define('manage-site', fn ($user) =>
+        $user->hasPermissions('manage-site-pages')
         );
 
         Gate::define('view-tasks', fn ($user) =>
