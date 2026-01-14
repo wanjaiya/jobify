@@ -1,7 +1,9 @@
 <x-guest-layout>
 
+
+
     <!-- Hero Section with Search -->
-    <section class="relative bg-gradient-to-br from-primary-800 via-primary-800 to-primary-900 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">

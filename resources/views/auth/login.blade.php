@@ -4,14 +4,14 @@
 
 
     <div class="min-h-screen w-full">
-        <div class="grid lg:grid-cols-5 md:grid-cols-2 items-center gap-y-4 h-full">
+        <div class="lex items-center justify-center">
             {{-- <div
                 class="max-md:order-1 lg:col-span-3 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
                 <img src="https://readymadeui.com/signin-image.webp"
                     class="lg:w-2/3 w-full h-full object-contain block mx-auto" alt="login-image" />
             </div> --}}
 
-            <div class="lg:col-span-2 w-full p-8 max-w-lg max-md:max-w-xl mx-auto">
+            <div class="lg:col-span-2 w-full p-8 max-w-lg max-md:max-w-xl mx-auto mt-12">
 
                 <x-auth-session-status class="mb-4" :status="session('status')" />
                 <x-session-error-status class="mb-4" :error="session('error')" />
@@ -23,7 +23,7 @@
                         <h1 class="text-slate-900 text-3xl font-bold">Sign in</h1>
                         <p class="text-[15px] mt-6 text-slate-600">Don't have an account <a
                                 href="{{ route('register') }}"
-                                class="text-blue-600 font-medium hover:underline ml-1 whitespace-nowrap">Register
+                                class="text-primary-600 font-medium hover:underline ml-1 whitespace-nowrap">Register
                                 here</a></p>
                     </div>
 
@@ -32,7 +32,7 @@
                             <label class="text-slate-900 text-[15px] font-medium mb-2 block">Email</label>
                             <div class="relative flex items-center">
                                 <input name="email" type="text" required
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter email" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
                                     class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 682.667 682.667">
@@ -56,7 +56,7 @@
                             <label class="text-slate-900 text-[15px] font-medium mb-2 block">Password</label>
                             <div class="relative flex items-center">
                                 <input name="password" type="password" required
-                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-blue-600 outline-none"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
                                     placeholder="Enter password" />
                                 <div class="input-group-append pass-view">
                                     <i class="far fa-eye"></i>
@@ -67,14 +67,14 @@
                         <div class="flex flex-wrap items-center justify-between gap-4">
                             <div class="flex items-center">
                                 <input id="remember-me" name="remember-me" type="checkbox"
-                                    class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-slate-300 rounded-md" />
+                                    class="h-4 w-4 shrink-0 text-primary-600 focus:ring-primary-500 border-slate-300 rounded-md" />
                                 <label for="remember-me" class="ml-3 block text-[15px] text-slate-900">
                                     Remember me
                                 </label>
                             </div>
                             <div>
                                 <a href="{{ route('password.request') }}"
-                                    class="text-blue-600 font-medium text-sm hover:underline">
+                                    class="text-primary-600 font-medium text-sm hover:underline">
                                     Forgot Password?
                                 </a>
                             </div>
@@ -83,7 +83,7 @@
 
                     <div class="mt-12">
                         <button type="submit"
-                            class="w-full py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer">
+                            class="w-full py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none cursor-pointer">
                             Sign in
                         </button>
                     </div>

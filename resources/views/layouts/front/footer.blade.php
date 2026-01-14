@@ -5,18 +5,7 @@
                 <!-- Company Info -->
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
-                            <path d="M12 16h16M12 20h16M12 24h10" stroke="white" stroke-width="2.5"
-                                stroke-linecap="round" />
-                            <defs>
-                                <linearGradient id="footer-logo-gradient" x1="0" y1="0"
-                                    x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#3B82F6" />
-                                    <stop offset="1" stop-color="#1E40AF" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                        <img src="{{ asset('images/small-logo.png') }}" class="w-20"/>
                         <span class="text-xl font-heading font-bold text-text-secondary">{{ config('app.name') }}</span>
                     </div>
                     <p class="text-sm text-gray-400 mb-4">
