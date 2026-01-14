@@ -9,7 +9,7 @@
             </div>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center sm:space-x-3 md:space-x-8 ">
 
 
                 @foreach (mainMenu() as $menu)

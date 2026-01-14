@@ -14,9 +14,10 @@
     
 
 
+    @include('components.success-toast')
     @include('layouts.front.scripts')
 
-    @yield('scripts')
+    @stack('scripts')
 
 </body>
 

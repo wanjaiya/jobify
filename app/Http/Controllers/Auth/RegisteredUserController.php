@@ -34,7 +34,8 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'phone_number' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -43,8 +44,10 @@ class RegisteredUserController extends Controller
         $roleCandidate = Role::where('slug', 'candidate')->first();
 
         $user = User::create([
-            'name' => $request->name,
+            'name' => $request->first_name . ' ' . $request->last_name,
             'email' => $request->email,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'phone_number' => $request->phone_number,
             'password' => Hash::make($request->password),
         ]);
@@ -55,11 +58,11 @@ class RegisteredUserController extends Controller
         $token = AccountVerificationToken::createTokenForUser($user->id);
 
 
-         // Send verification email
+        // Send verification email
         // $user->sendAccountVerificationEmail($token->token);
 
         Mail::send('emails.account-verification', ['name' => $user->name, 'token' => $token->token], function ($message) use ($user) {
-            $message->from('info@jobify-kenya.com', 'The Jobify Team');
+            $message->from('info@staff-link.com', 'The Jobify Team');
             $message->to($user->email, $user->name);
             $message->subject('Verify Your Jobify Account');
         });
@@ -90,15 +93,15 @@ class RegisteredUserController extends Controller
             return redirect()->route('verify.account')->with('error', 'Invalid verification token.');
         }
 
-        if ($verificationToken->expires_at < now()){
-            
+        if ($verificationToken->expires_at < now()) {
+
             $verificationToken->delete();
 
             return redirect()->route('verify.account')->with('error', 'The token has expired, Kindly request a new one');
         }
 
         $user = User::find($verificationToken->user_id);
-        
+
 
         if (!$user) {
             return redirect()->route('verify.account')->with('error', 'User not found.');
@@ -115,10 +118,10 @@ class RegisteredUserController extends Controller
     }
 
 
-        public function showResendVerificationForm(): View
-        {
-            return view('auth.resend-verification-email');
-        }
+    public function showResendVerificationForm(): View
+    {
+        return view('auth.resend-verification-email');
+    }
 
 
     public function resendVerificationEmail(Request $request): RedirectResponse
@@ -142,7 +145,7 @@ class RegisteredUserController extends Controller
 
         // Send verification email
         Mail::send('emails.account-verification', ['name' => $user->name, 'token' => $token->token], function ($message) use ($user) {
-            $message->from('info@jobify-kenya.com', 'The Jobify Team');
+            $message->from('info@j.com', 'The Jobify Team');
             $message->to($user->email, $user->name);
             $message->subject('Verify Your Jobify Account');
         });

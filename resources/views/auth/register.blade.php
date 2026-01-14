@@ -25,14 +25,14 @@
 
                     <div class="space-y-6">
                         <div>
-                            <label class="text-slate-900 text-[15px] font-medium mb-2 block">Full Name</label>
+                            <label class="text-slate-900 text-[15px] font-medium mb-2 block">First Name</label>
                             <div class="relative flex items-center">
 
 
                                 <input id="name"
                                     class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
-                                    type="text" name="name" :value="old('name')" required autofocus
-                                    autocomplete="name" placeholder="Enter full name" />
+                                    type="text" name="first_name" :value="old('first_name')" required autofocus
+                                    autocomplete="name" placeholder="Enter first name" />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
                                     class="w-[18px] h-[18px] absolute right-2" viewBox="0 0 24 24">
                                     <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
@@ -42,7 +42,28 @@
                                 </svg>
                                
                             </div>
-                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                             <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
+
+                        </div>
+                         <div>
+                            <label class="text-slate-900 text-[15px] font-medium mb-2 block">Last Name</label>
+                            <div class="relative flex items-center">
+
+
+                                <input id="name"
+                                    class="w-full text-sm text-slate-900 bg-slate-100 focus:bg-transparent pl-4 pr-10 py-3.5 rounded-md border border-gray-200 focus:border-primary-600 outline-none"
+                                    type="text" name="last_name" :value="old('last_name')" required autofocus
+                                    autocomplete="name" placeholder="Enter Last name" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
+                                    class="w-[18px] h-[18px] absolute right-2" viewBox="0 0 24 24">
+                                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                                    <path
+                                        d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                                        data-original="#000000"></path>
+                                </svg>
+                               
+                            </div>
+                             <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
 
                         </div>
                         <div>
@@ -132,7 +153,7 @@
                         <hr class="w-full border-slate-300" />
                     </div>
 
-                    <a href="#"
+                    <a href="{{url('/auth/google')}}"
                         class="w-full flex items-center justify-center gap-4 py-2.5 px-6 text-[15px] font-medium tracking-wide text-slate-900 border border-slate-300 rounded-md bg-slate-50 hover:bg-slate-100 focus:outline-none cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" class="inline" viewBox="0 0 512 512">
                             <path fill="#fbbd00"
@@ -160,7 +181,7 @@
             </div>
         </div>
 
-        @section('scripts')
+        @push('scripts')
             <script>
                 const passwordField = document.querySelector('input[name="password"]');
                 const passwordFieldConfirm = document.querySelector('input[name="password_confirmation"]')
@@ -214,6 +235,6 @@
 
                 });
             </script>
-        @endsection
+        @endpush
 
 </x-guest-layout>

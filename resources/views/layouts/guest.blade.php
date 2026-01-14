@@ -16,7 +16,7 @@
     @include('layouts.front.footer')
     @include('layouts.front.scripts')
 
-    @yield('scripts')
+    @stack('scripts')
 
 </body>
 

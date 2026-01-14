@@ -28,11 +28,11 @@ class SocialAuthController extends Controller
 
             $user = Socialite::driver('google')->stateless()->user();
 
+
             $check = User::where('email', $user->email)->first();
 
             if ($check) {
 
-            
                 Auth::login($check, true);
 
                 $check->last_login_at = now();
@@ -40,7 +40,7 @@ class SocialAuthController extends Controller
 
                 if (!$check->profile_completed) {
                     
-                    return redirect()->route('profile.edit')->with('status', 'Kindly update your profile with the missing information');
+                    return redirect()->route('profile.edit', ['user' => $check])->with('status', 'Kindly update your profile with the missing information');
                 } else {
 
 
@@ -53,6 +53,8 @@ class SocialAuthController extends Controller
                 $user = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
+                    'first_name' => $user->user['given_name'],
+                    'last_name'=> $user->user['family_name'],
                     'google_id' => $user->id,
                     'published' => true,
                     'email_verified_at' => now(),
@@ -66,7 +68,7 @@ class SocialAuthController extends Controller
                 $user->last_login_at = now();
                 $user->save();
 
-                return redirect()->route('profile.edit')->with('status', 'Kindly update your profile with the missing information');
+                return redirect()->route('profile.edit', ['user' => $user])->with('status', 'Kindly update your profile with the missing information');
             }
         } catch (Exception $e) {
 

@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        @section('scripts')
+        @push('scripts')
             <script>
                 const passwordField = document.querySelector('input[name="password"]');
                 const toggleIcon = passwordField.nextElementSibling;
@@ -149,7 +149,7 @@
 
                 });
             </script>
-        @endsection
+        @endpush
 
 
 </x-guest-layout>

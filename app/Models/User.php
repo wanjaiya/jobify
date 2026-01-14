@@ -28,6 +28,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
+        'first_name',
+        'last_name',
         'phone_number',
         'google_id',
         'published',
@@ -35,6 +37,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at',
         'last_login_at',
         'profile_completed',
+        'location',
     ];
 
     /**
