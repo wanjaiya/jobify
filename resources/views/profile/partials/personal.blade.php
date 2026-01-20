@@ -1,8 +1,14 @@
+ <div id="formErrors">
+
+ </div>
+
  <form id="personal-info-form">
+     <input type="hidden" name="user_id" value="{{ $user->id }}" />
      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
          <div>
              <label for="first-name" class="label">First Name *</label>
-             <input name="first_name" type="text" id="first-name" class="input" value="{{ $user->first_name }}" required>
+             <input name="first_name" type="text" id="first-name" class="input" value="{{ $user->first_name }}"
+                 required>
          </div>
          <div>
              <label for="last-name" class="label">Last Name *</label>
@@ -36,7 +42,7 @@
          </div>
          <div>
              <label for="linkedin" class="label">LinkedIn Profile</label>
-             <input name="linkedin" type="url" id="linkedin" class="input" value=""
+             <input name="linkedin" type="url" id="linkedin" class="input" value="{{($user->profile) ? $user->profile->linkedin : ''}}"
                  placeholder="linkedin.com/in/yourprofile">
          </div>
 
@@ -46,7 +52,7 @@
 
          <div>
              <label for="github" class="label">Github Profile</label>
-             <input name="github" type="url" id="github" class="input" value=""
+             <input name="github" type="url" id="github" class="input" value="{{($user->profile) ? $user->profile->github : ''}}"
                  placeholder="github.com/yourprofile">
          </div>
      </div>
@@ -54,30 +60,32 @@
      <div class="mb-6">
          <label for="headline" class="label">Professional Headline *</label>
          <input name="professional_headline" type="text" id="headline" class="input"
-             value="Senior Software Engineer | Full-Stack Developer | Tech Lead"
-             placeholder="e.g., Senior Software Engineer specializing in React and Node.js">
+             value="{{ ($user->profile) ? $user->profile->professional_headline : ''}}"
+             placeholder="e.g., Senior Software Engineer specializing in React and Node.js" required>
          <p class="input-hint">This appears at the top of your profile (max 100 characters)</p>
      </div>
 
      <div class="mb-6">
          <label for="summary" class="label">Professional Summary *</label>
-         <textarea name="professional_summary" id="summary" class="textarea" rows="6">Experienced software engineer with 8+ years of expertise in full-stack development, specializing in React, Node.js, and cloud technologies. Proven track record of leading cross-functional teams and delivering scalable solutions for Fortune 500 companies. Passionate about clean code, mentoring junior developers, and staying current with emerging technologies.</textarea>
-         <p class="input-hint">Highlight your key achievements and what makes you unique (500-1000 characters
-             recommended)</p>
+         <textarea name="professional_summary" id="summary" class="textarea" rows="6">{{($user->profile) ? $user->profile->professional_summary : ''}}</textarea>
      </div>
 
      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
          <div>
              <label for="years-experience" class="label">Years of Experience *</label>
-             <select id="years-experience" class="input" required name="year_experience">
+             <select id="years-experience" class="input" required name="years_experience">
                  <option value="">Select experience level</option>
                  @foreach (\App\Models\CandidateProfile::getExperience() as $key => $value)
-                     <option value={{ $value['id'] }}>{{ $value['name'] }}</option>
+                     @if ($user->profile && $user->profile->years_experience === $value['id'])
+                         <option value={{ $value['id'] }} selected>{{ $value['name'] }}</option>
+                     @else
+                         <option value={{ $value['id'] }}>{{ $value['name'] }}</option>
+                     @endif
                  @endforeach
              </select>
          </div>
          <div>
-             <label for="salary-expectation" class="label">Salary Expectation (USD)</label>
+             <label for="salary-expectation" class="label">Salary Expectation </label>
 
              <div class="relative flex items-center">
 
@@ -85,13 +93,17 @@
                      <select id="years-experience" class="input" required name="salary_currency">
                          <option value="">Select Currency</option>
                          @foreach (\App\Models\CandidateProfile::getCurrencies() as $key => $value)
-                             <option value={{ $value['id'] }}>{{ $value['name'] }}</option>
+                             @if ($user->profile && $user->profile->salary_currency === $value['id'])
+                                 <option value={{ $value['id'] }} selected>{{ $value['name'] }}</option>
+                             @else
+                                 <option value={{ $value['id'] }}>{{ $value['name'] }}</option>
+                             @endif
                          @endforeach
                      </select>
                  </div>
 
                  <input name="salary_expectation" type="text" id="salary-expectation" class="input"
-                     value="$120,000 - $180,000" placeholder="e.g., $80,000 - $100,000">
+                     value="{{ ($user->profile) ? $user->profile->salary_expectation : '' }}" placeholder="e.g., $80,000 - $100,000">
 
              </div>
 

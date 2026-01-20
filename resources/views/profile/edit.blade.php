@@ -20,7 +20,7 @@
 
             <!-- Tab Content: Experience -->
             <div class="tab-content hidden" id="experience-tab">
-                @include('profile.partials.experience')
+                @include('profile.partials.experience', ['experiences' => $experiences])
             </div>
 
             <!-- Tab Content: Education -->
@@ -58,6 +58,10 @@
 
 
     @push('scripts')
+        <script>
+            const profileUpdateUrl = "{{ route('profiles.update') }}";
+        </script>
+
         <script>
             // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -111,50 +115,51 @@
 
             // Personal Info Form Submission
             const personalInfoForm = document.getElementById('personal-info-form');
-            personalInfoForm.addEventListener('submit', async function (e) {
+
+            personalInfoForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
                 const form = e.target;
                 const formData = new FormData(form);
-                formData.append('_method', 'PATCH');
+                formData.append('_method', 'PATCH'); // Laravel method spoofing
 
-                const response = await fetch("{{ route('profiles.update') }}", {
-                    method: "POST",
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                        'Accept': 'application/json'
-                    },
-                    body: formData
-                });
+                try {
+                    const response = await fetch(profileUpdateUrl, {
+                        method: "POST",
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    });
 
-                const data = await response.json();
+                    const data = await response.json();
 
-                if (!response.ok) {
-                    // Validation errors
-                    let errors = '';
-                    for (let field in data.errors) {
-                        errors += `<p>${data.errors[field][0]}</p>`;
+                    if (!response.ok) {
+                        let errors = '';
+                        for (let field in data.errors) {
+                            errors += `<p>${data.errors[field][0]}</p>`;
+                        }
+                        document.getElementById('formErrors').innerHTML = errors;
+                        showToast('Validation failed', 'error');
+                        return;
                     }
-                    document.getElementById('formErrors').innerHTML = errors;
-                    return;
+
+
+                    document.getElementById('formErrors').innerHTML = '';
+                    showToast(data.message, 'success');
+
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1500); // wait for toast to show
+
+                } catch (err) {
+                    showToast('Network error', 'error');
                 }
-
-                alert(data.message);
-                form.reset();
-
-                console.log(formData);
-
-                showSuccessToast();
             });
 
-            // Show Success Toast
-            function showSuccessToast() {
-                const toast = document.getElementById('success-toast');
-                toast.classList.remove('hidden');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 3000);
-            }
+
+
 
             // Skill Input Autocomplete
             const skillInput = document.getElementById('skill-input');
@@ -258,17 +263,17 @@
             });
 
             // Add Experience/Education/Certification Buttons
-            document.getElementById('add-experience-btn').addEventListener('click', () => {
-                alert('Add experience form would open in a modal');
-            });
+            // document.getElementById('add-experience-btn').addEventListener('click', () => {
+            //     alert('Add experience form would open in a modal');
+            // });
 
-            document.getElementById('add-education-btn').addEventListener('click', () => {
-                alert('Add education form would open in a modal');
-            });
+            // document.getElementById('add-education-btn').addEventListener('click', () => {
+            //     alert('Add education form would open in a modal');
+            // });
 
-            document.getElementById('add-certification-btn').addEventListener('click', () => {
-                alert('Add certification form would open in a modal');
-            });
+            // document.getElementById('add-certification-btn').addEventListener('click', () => {
+            //     alert('Add certification form would open in a modal');
+            // });
 
             // Edit/Delete Buttons for Experience, Education, Documents
             document.addEventListener('click', (e) => {
@@ -301,6 +306,204 @@
                     alert('Document download would start');
                 }
             });
+        </script>
+
+
+        <script>
+            function experienceList() {
+                return {
+                    experiences: [],
+
+                    init() {
+                        // initial load from backend
+                        this.experiences = @json($experiences)
+                    },
+
+                    upsert(experience) {
+                        const index = this.experiences.findIndex(
+                            e => e.id === experience.id
+                        )
+
+                        if (index !== -1) {
+                            // UPDATE
+                            this.experiences.splice(index, 1, experience)
+                        } else {
+                            // CREATE (add newest on top)
+                            this.experiences.unshift(experience)
+                        }
+                    },
+
+                    remove(id) {
+                        this.experiences = this.experiences.filter(
+                            exp => exp.id !== id
+                        )
+                    },
+
+                    async confirmDelete(exp) {
+                        const result = await Swal.fire({
+                            title: 'Delete experience?',
+                            text: 'This action cannot be undone',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#dc2626',
+                            confirmButtonText: 'Delete',
+                        })
+
+                        if (!result.isConfirmed) return
+
+                        try {
+                            await fetch(exp.delete_url, {
+                                method: 'POST',
+                                headers: {
+                                    'X-CSRF-TOKEN': document
+                                        .querySelector('meta[name="csrf-token"]')
+                                        .getAttribute('content'),
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    _method: 'DELETE'
+                                }),
+                            })
+
+                            this.remove(exp.id)
+                            toast('success', 'Experience deleted')
+
+                        } catch (e) {
+                            console.error(e)
+                            toast('error', 'Failed to delete experience')
+                        }
+                    }
+                }
+            }
+        </script>
+
+
+
+        <script>
+            function experienceForm() {
+                return {
+                    mode: 'create',
+                    action: '',
+                    loading: false,
+                    errors: {},
+
+                    form: {
+                        id: '',
+                        position: '',
+                        company_name: '',
+                        start_date: '',
+                        end_date: '',
+                        present: false,
+                        location: '',
+                        summary: ''
+                    },
+
+                    open(data = null) {
+                        this.errors = {}
+
+                        if (data && Object.keys(data).length > 0) {
+                            this.mode = 'edit'
+                            this.action = '{{ route('candidate.experience.update') }}'
+                            Object.assign(this.form, {
+                                id: data.id,
+                                position: data.position,
+                                company_name: data.company_name,
+                                start_date: data.start_date,
+                                end_date: data.end_date,
+                                present: Boolean(data.present),
+                                location: data.location,
+                                summary: data.summary,
+                            })
+                        } else {
+                            this.mode = 'create'
+                            this.action = '{{ route('candidate.experience.store') }}'
+                            this.form = {
+                                id: '',
+                                position: '',
+                                company_name: '',
+                                start_date: '',
+                                end_date: '',
+                                present: false,
+                                location: '',
+                                summary: ''
+                            }
+                        }
+
+                        this.$dispatch('open-modal', 'experience-form')
+                    },
+
+                    async submit() {
+                        this.loading = true
+                        this.errors = {}
+
+                        try {
+                            const response = await fetch(this.action, {
+                                method: this.mode === 'edit' ? 'PATCH' : 'POST',
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': document
+                                        .querySelector('meta[name="csrf-token"]')
+                                        .getAttribute('content')
+                                },
+                                body: JSON.stringify({
+                                    ...this.form,
+                                    _method: this.mode === 'edit' ? 'PATCH' : 'POST'
+                                })
+
+                            })
+
+                            if (!response.ok) {
+                                if (response.status === 422) {
+                                    const data = await response.json()
+                                    this.errors = data.errors
+                                    return
+                                }
+                                throw new Error('Something went wrong')
+                            }
+
+                            const data = await response.json()
+
+                            // close modal
+                            this.$dispatch('close-modal', 'experience-form')
+
+                            showToast(this.mode === 'create' ?
+                                'Experience added successfully' :
+                                'Experience updated successfully',
+                                'success'
+                            )
+
+                            // emit refresh event
+                            this.$dispatch('experience-saved', data)
+
+                        } catch (e) {
+
+                            console.log(e);
+
+                            alert('Failed to save experience')
+                        } finally {
+                            this.loading = false
+                        }
+                    }
+                }
+            }
+        </script>
+
+
+        <script>
+            // Toast function
+            function showToast(message, type = 'success') {
+                const toast = document.getElementById('toast');
+                const colors = {
+                    success: 'bg-green-600',
+                    error: 'bg-red-600'
+                };
+                toast.className = `fixed bottom-8 right-8 px-4 py-2 rounded-lg shadow text-white ${colors[type]}`;
+                toast.textContent = message;
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 3000);
+            }
         </script>
     @endpush
 </x-main-layout>

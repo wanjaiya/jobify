@@ -1,55 +1,35 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\MenuController;
-use App\Http\Controllers\Admin\MenuTypeController;
-use App\Http\Controllers\Common\PublishController;
+use App\Http\Controllers\HomeContoller;
+use App\Http\Controllers\Common\ProfileController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [HomeContoller::class, 'index'])->name('home');
+Route::get('/about-us', [HomeContoller::class, 'aboutUs'])->name('about-us');
+Route::get('/services', [HomeContoller::class, 'services'])->name('services');
+Route::get('/jobs', [HomeContoller::class, 'jobs'])->name('jobs');
+
+
+Route::get('/dashboard', [HomeContoller::class ,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('my-profile');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profiles.update');
-  
 
-    
-    Route::middleware(['can:manage-site'])->group(function() {
-     Route::resource('menuTypes', MenuTypeController::class);
-     Route::post('menuTypes/{menuType}/publish', [MenuTypeController::class, 'publish'])->name('menuTypes.publish');
-     Route::resource('menus', MenuController::class);
-
-    });
-    
-    
-    Route::middleware(['can:manage-users'])->group(function () {
-        Route::resource('roles', RoleController::class);
-        Route::resource('permissions', PermissionController::class);
-        Route::resource('users', UserController::class);
-        Route::get('users/{user}/verify', [UserController::class, 'verify'])->name('users.verify');
-    });
-
-    
-
-    Route::post('/admin/publish/{model}/{id}', [PublishController::class, 'publish'])
-    ->name('admin.publish');
-
-    Route::post('/admin/unpublish/{model}/{id}', [PublishController::class, 'unpublish'])
-    ->name('admin.unpublish');
+    Route::post('/candidate/experience', [ProfileController::class, 'experienceStore'])
+        ->name('candidate.experience.store');
+    Route::patch('/candidate/experience', [ProfileController::class, 'experienceUpdate'])
+        ->name('candidate.experience.update');
+    Route::delete('/candidate/experience/{experience}', [ProfileController::class, 'experienceDestroy'])->name('candidate.experience.destroy');
 
 
+    Route::get('/my-applications', [HomeContoller::class, 'myApplications'])->name('my-applications');
 });
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/admin.php';

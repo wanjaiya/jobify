@@ -287,3 +287,7 @@ input:where([type='text']):focus, input:where(:not([type])):focus, input:where([
             border-color: var(--color-primary);
             background-color: var(--color-primary-50);
         }
+
+.candidate-modal-form{
+  margin-top: 4% !important;
+}
