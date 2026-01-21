@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\CandidateProfile;
+use App\Models\Education;
 use App\Models\WorkExperience;
+use App\Models\Qualification;
 
 class ProfileController extends Controller
 {
@@ -20,9 +22,16 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         $work = WorkExperience::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
+        $educations = Education::with('qualifications')->where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
+
+          foreach($educations as $education){
+            $education->qualification_level_name = $education->qualifications->pluck('name')->toArray();
+        }
+
         return view('profile.edit', [
             'user' => $request->user(),
-            'experiences' => $work
+            'experiences' => $work,
+            'educations' => $educations
         ]);
     }
 
@@ -79,69 +88,8 @@ class ProfileController extends Controller
         ], 201);
     }
 
-    public function experienceStore(Request $request)
-    {
-
-        $data = $request->validate([
-            'position' => 'required|string|max:255',
-            'company_name' => 'required|string|max:255',
-            'start_date' => 'required|date',
-            'end_date' => 'nullable|date',
-            'present' => 'boolean',
-            'location' => 'required|string',
-            'summary' => 'nullable|string',
-        ]);
-
-        $data['present'] = $request->boolean('present');
-        $data['end_date'] = $data['present'] ? null : $data['end_date'];
-
-        $experience = $request->user()
-            ->experiences()
-            ->create($data);
-
-        return response()->json($experience->fresh());
-    }
+  
 
 
-    public function experienceUpdate(Request $request)
-    {
-
-        $data = $request->validate([
-            'position' => 'required|string|max:255',
-            'company_name' => 'required|string|max:255',
-            'start_date' => 'required|date',
-            'present' => 'boolean',
-            'location' => 'required|string',
-            'summary' => 'nullable|string',
-        ]);
-
-
-
-        $data['present'] = $request->boolean('present');
-        $data['end_date'] = $data['present'] ? null : $data['end_date'];
-
-
-        $request->user()->experiences()->where('id', $request->id)->update($data);
-
-        $experience = WorkExperience::where('id', $request->id)->first();
-
-
-        return response()->json($experience->fresh());
-    }
-
-    public function experienceDestroy(WorkExperience $experience)
-    {
-        // Security: ensure user owns the record
-        abort_unless(
-            $experience->user_id === auth()->id(),
-            403
-        );
-
-        $experience->delete();
-
-        return response()->json([
-            'message' => 'Experience deleted successfully',
-            'id' => $experience->id,
-        ]);
-    }
+ 
 }

@@ -42,7 +42,8 @@
          </div>
          <div>
              <label for="linkedin" class="label">LinkedIn Profile</label>
-             <input name="linkedin" type="url" id="linkedin" class="input" value="{{($user->profile) ? $user->profile->linkedin : ''}}"
+             <input name="linkedin" type="url" id="linkedin" class="input"
+                 value="{{ $user->profile ? $user->profile->linkedin : '' }}"
                  placeholder="linkedin.com/in/yourprofile">
          </div>
 
@@ -52,22 +53,22 @@
 
          <div>
              <label for="github" class="label">Github Profile</label>
-             <input name="github" type="url" id="github" class="input" value="{{($user->profile) ? $user->profile->github : ''}}"
-                 placeholder="github.com/yourprofile">
+             <input name="github" type="url" id="github" class="input"
+                 value="{{ $user->profile ? $user->profile->github : '' }}" placeholder="github.com/yourprofile">
          </div>
      </div>
 
      <div class="mb-6">
          <label for="headline" class="label">Professional Headline *</label>
          <input name="professional_headline" type="text" id="headline" class="input"
-             value="{{ ($user->profile) ? $user->profile->professional_headline : ''}}"
+             value="{{ $user->profile ? $user->profile->professional_headline : '' }}"
              placeholder="e.g., Senior Software Engineer specializing in React and Node.js" required>
          <p class="input-hint">This appears at the top of your profile (max 100 characters)</p>
      </div>
 
      <div class="mb-6">
          <label for="summary" class="label">Professional Summary *</label>
-         <textarea name="professional_summary" id="summary" class="textarea" rows="6">{{($user->profile) ? $user->profile->professional_summary : ''}}</textarea>
+         <textarea name="professional_summary" id="summary" class="textarea" rows="6">{{ $user->profile ? $user->profile->professional_summary : '' }}</textarea>
      </div>
 
      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -103,7 +104,8 @@
                  </div>
 
                  <input name="salary_expectation" type="text" id="salary-expectation" class="input"
-                     value="{{ ($user->profile) ? $user->profile->salary_expectation : '' }}" placeholder="e.g., $80,000 - $100,000">
+                     value="{{ $user->profile ? $user->profile->salary_expectation : '' }}"
+                     placeholder="e.g., $80,000 - $100,000">
 
              </div>
 
@@ -111,11 +113,8 @@
      </div>
 
      <div class="flex justify-end gap-4">
-         <button type="button" class="btn btn-ghost">Cancel</button>
+         <button type="button" class="btn border-primary border hover:bg-primary-700 hover:text-white"">Cancel</button>
          <button type="submit" class="btn btn-primary">
-             <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1b2ddd32a-1767635531411.png"
-                 alt="Save icon" class="w-5 h-5 mr-2"
-                 onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
              Save Changes
          </button>
      </div>

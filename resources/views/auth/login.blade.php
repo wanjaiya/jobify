@@ -4,7 +4,7 @@
 
 
     <div class="min-h-screen w-full">
-        <div class="lex items-center justify-center">
+        <div class="flex items-center justify-center">
             {{-- <div
                 class="max-md:order-1 lg:col-span-3 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
                 <img src="https://readymadeui.com/signin-image.webp"

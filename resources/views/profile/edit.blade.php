@@ -17,12 +17,10 @@
             <div class="tab-content active" id="personal-tab">
                 @include('profile.partials.personal')
             </div>
-
-            <!-- Tab Content: Experience -->
+               <!-- Tab Content: Experience -->
             <div class="tab-content hidden" id="experience-tab">
-                @include('profile.partials.experience', ['experiences' => $experiences])
+                @include('profile.partials.experience')
             </div>
-
             <!-- Tab Content: Education -->
             <div class="tab-content hidden" id="education-tab">
                 @include('profile.partials.education')
@@ -37,6 +35,9 @@
             <div class="tab-content hidden" id="documents-tab">
                 @include('profile.partials.documents')
             </div>
+
+           
+
         </div>
 
         <!-- Quick Actions -->
@@ -309,186 +310,7 @@
         </script>
 
 
-        <script>
-            function experienceList() {
-                return {
-                    experiences: [],
-
-                    init() {
-                        // initial load from backend
-                        this.experiences = @json($experiences)
-                    },
-
-                    upsert(experience) {
-                        const index = this.experiences.findIndex(
-                            e => e.id === experience.id
-                        )
-
-                        if (index !== -1) {
-                            // UPDATE
-                            this.experiences.splice(index, 1, experience)
-                        } else {
-                            // CREATE (add newest on top)
-                            this.experiences.unshift(experience)
-                        }
-                    },
-
-                    remove(id) {
-                        this.experiences = this.experiences.filter(
-                            exp => exp.id !== id
-                        )
-                    },
-
-                    async confirmDelete(exp) {
-                        const result = await Swal.fire({
-                            title: 'Delete experience?',
-                            text: 'This action cannot be undone',
-                            icon: 'warning',
-                            showCancelButton: true,
-                            confirmButtonColor: '#dc2626',
-                            confirmButtonText: 'Delete',
-                        })
-
-                        if (!result.isConfirmed) return
-
-                        try {
-                            await fetch(exp.delete_url, {
-                                method: 'POST',
-                                headers: {
-                                    'X-CSRF-TOKEN': document
-                                        .querySelector('meta[name="csrf-token"]')
-                                        .getAttribute('content'),
-                                    'X-Requested-With': 'XMLHttpRequest',
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({
-                                    _method: 'DELETE'
-                                }),
-                            })
-
-                            this.remove(exp.id)
-                            toast('success', 'Experience deleted')
-
-                        } catch (e) {
-                            console.error(e)
-                            toast('error', 'Failed to delete experience')
-                        }
-                    }
-                }
-            }
-        </script>
-
-
-
-        <script>
-            function experienceForm() {
-                return {
-                    mode: 'create',
-                    action: '',
-                    loading: false,
-                    errors: {},
-
-                    form: {
-                        id: '',
-                        position: '',
-                        company_name: '',
-                        start_date: '',
-                        end_date: '',
-                        present: false,
-                        location: '',
-                        summary: ''
-                    },
-
-                    open(data = null) {
-                        this.errors = {}
-
-                        if (data && Object.keys(data).length > 0) {
-                            this.mode = 'edit'
-                            this.action = '{{ route('candidate.experience.update') }}'
-                            Object.assign(this.form, {
-                                id: data.id,
-                                position: data.position,
-                                company_name: data.company_name,
-                                start_date: data.start_date,
-                                end_date: data.end_date,
-                                present: Boolean(data.present),
-                                location: data.location,
-                                summary: data.summary,
-                            })
-                        } else {
-                            this.mode = 'create'
-                            this.action = '{{ route('candidate.experience.store') }}'
-                            this.form = {
-                                id: '',
-                                position: '',
-                                company_name: '',
-                                start_date: '',
-                                end_date: '',
-                                present: false,
-                                location: '',
-                                summary: ''
-                            }
-                        }
-
-                        this.$dispatch('open-modal', 'experience-form')
-                    },
-
-                    async submit() {
-                        this.loading = true
-                        this.errors = {}
-
-                        try {
-                            const response = await fetch(this.action, {
-                                method: this.mode === 'edit' ? 'PATCH' : 'POST',
-                                headers: {
-                                    'X-Requested-With': 'XMLHttpRequest',
-                                    'Content-Type': 'application/json',
-                                    'X-CSRF-TOKEN': document
-                                        .querySelector('meta[name="csrf-token"]')
-                                        .getAttribute('content')
-                                },
-                                body: JSON.stringify({
-                                    ...this.form,
-                                    _method: this.mode === 'edit' ? 'PATCH' : 'POST'
-                                })
-
-                            })
-
-                            if (!response.ok) {
-                                if (response.status === 422) {
-                                    const data = await response.json()
-                                    this.errors = data.errors
-                                    return
-                                }
-                                throw new Error('Something went wrong')
-                            }
-
-                            const data = await response.json()
-
-                            // close modal
-                            this.$dispatch('close-modal', 'experience-form')
-
-                            showToast(this.mode === 'create' ?
-                                'Experience added successfully' :
-                                'Experience updated successfully',
-                                'success'
-                            )
-
-                            // emit refresh event
-                            this.$dispatch('experience-saved', data)
-
-                        } catch (e) {
-
-                            console.log(e);
-
-                            alert('Failed to save experience')
-                        } finally {
-                            this.loading = false
-                        }
-                    }
-                }
-            }
-        </script>
+       
 
 
         <script>
@@ -505,5 +327,7 @@
                 setTimeout(() => toast.classList.add('hidden'), 3000);
             }
         </script>
+
+      
     @endpush
 </x-main-layout>
