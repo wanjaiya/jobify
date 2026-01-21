@@ -35,6 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/candidate/education', [EducationController::class, 'educationUpdate'])
         ->name('candidate.education.update');
     Route::delete('/candidate/education/{education}', [EducationController::class, 'educationDestroy'])->name('candidate.education.destroy');
+
+
+    Route::post('/candidate/certification', [EducationController::class, 'certificationStore'])
+        ->name('candidate.certification.store');
+    Route::patch('/candidate/certification', [EducationController::class, 'certificationUpdate'])
+        ->name('candidate.certification.update');
+    Route::delete('/candidate/certification/{certification}', [EducationController::class, 'certificationDestroy'])->name('candidate.certification.destroy');
 });
 
 

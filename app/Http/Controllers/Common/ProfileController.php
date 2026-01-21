@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\CandidateProfile;
+use App\Models\Certification;
 use App\Models\Education;
 use App\Models\WorkExperience;
 use App\Models\Qualification;
@@ -23,6 +24,7 @@ class ProfileController extends Controller
     {
         $work = WorkExperience::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
         $educations = Education::with('qualifications')->where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
+        $certifications = Certification::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
 
           foreach($educations as $education){
             $education->qualification_level_name = $education->qualifications->pluck('name')->toArray();
@@ -31,7 +33,8 @@ class ProfileController extends Controller
         return view('profile.edit', [
             'user' => $request->user(),
             'experiences' => $work,
-            'educations' => $educations
+            'educations' => $educations,
+            'certifications' => $certifications
         ]);
     }
 

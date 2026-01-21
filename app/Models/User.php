@@ -80,6 +80,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Education::class);
     }
 
+    public function certifications(){
+        return $this->hasMany(Certification::class);
+    }
+
     public function hasRole(string $role){
         return $this->roles()->where('slug', $role)->exists();
     }

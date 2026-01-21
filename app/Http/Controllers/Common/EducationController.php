@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Common;
 
 use App\Http\Controllers\Controller;
+use App\Models\Certification;
 use Illuminate\Http\Request;
 use App\Models\Education;
 
@@ -75,6 +76,74 @@ class EducationController extends Controller
         return response()->json([
             'message' => 'Education deleted successfully',
             'id' => $education->id,
+        ]);
+    }
+
+
+
+    
+       public function certificationStore(Request $request)
+    {
+        // Implementation for storing education records
+        $data = $request->validate([
+           
+            'field_of_study' => 'required|string|max:255',
+            'institution_name' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'nullable|date',
+            'present' => 'boolean',
+          
+        ]);
+
+
+        $data['present'] = $request->boolean('present');
+        $data['end_date'] = $data['present'] ? null : $data['end_date'];
+
+        $certification = $request->user()
+            ->certifications()
+            ->create($data);
+
+        return response()->json($certification->fresh());
+    }
+
+
+    public function certificationUpdate(Request $request)
+    {
+        // Implementation for updating education records
+        $data = $request->validate([
+            'field_of_study' => 'required|string|max:255',
+            'institution_name' => 'required|string|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'nullable|date',
+            'present' => 'boolean',
+           
+        ]);
+
+
+        $data['present'] = $request->boolean('present');
+        $data['end_date'] = $data['present'] ? null : $data['end_date'];
+
+        $request->user()->certifications()->where('id', $request->id)->update($data);
+
+        $certification = Certification::where('id', $request->id)->first();
+
+        return response()->json($certification->fresh());
+    }
+
+
+    public function certificationDestroy(Certification $certification, Request $request)
+    {
+        // Security: ensure user owns the record
+        abort_unless(
+            $certification->user_id === $request->user()->id,
+            403
+        );
+
+        $certification->delete();
+
+        return response()->json([
+            'message' => 'Certification deleted successfully',
+            'id' => $certification->id,
         ]);
     }
 }
