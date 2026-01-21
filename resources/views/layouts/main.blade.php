@@ -14,7 +14,7 @@
     
 
 
-    @include('components.success-toast')
+    @include('components.toast')
     @include('layouts.front.scripts')
 
     @stack('scripts')

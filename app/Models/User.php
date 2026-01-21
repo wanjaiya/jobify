@@ -13,7 +13,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail as FacadesMail;
 use Mail;
 use App\Mail\AccountVerificationMail;
-
+use Illuminate\Queue\Worker;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -67,6 +67,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Role::class);
     }
 
+    public function profile() {
+        return $this->hasOne(CandidateProfile::class);
+    }
+
+
+    public function experiences(){
+        return $this->hasMany(WorkExperience::class);
+    }
+
     public function hasRole(string $role){
         return $this->roles()->where('slug', $role)->exists();
     }
@@ -76,6 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $query->where('slug', $permission);
         })->exists();
     }
+
 
 
 

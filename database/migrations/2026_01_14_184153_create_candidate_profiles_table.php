@@ -18,10 +18,10 @@ return new class extends Migration
             $table->text('professional_headline');
             $table->text('professional_summary');
             $table->string('years_experience');
-            $table->string('salary_currency');
-            $table->string('salary_expectation');
-            $table->string('linkedin');
-            $table->string('github');
+            $table->string('salary_currency')->nullable();
+            $table->string('salary_expectation')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('github')->nullable();
             $table->timestamps();
         });
     }

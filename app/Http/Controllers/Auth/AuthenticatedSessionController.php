@@ -24,6 +24,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+
+        
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -33,7 +35,7 @@ class AuthenticatedSessionController extends Controller
         $user->save();
 
         if (!$user->profile_completed) {
-            return redirect()->route('profile.edit')->with('status', 'Kindly update your profile with the missing information');
+            return redirect()->route('my-profile')->with('status', 'Kindly update your profile with the missing information');
         }
 
         return redirect()->intended(route('dashboard', absolute: false));

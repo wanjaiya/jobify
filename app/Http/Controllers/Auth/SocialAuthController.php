@@ -40,7 +40,7 @@ class SocialAuthController extends Controller
 
                 if (!$check->profile_completed) {
                     
-                    return redirect()->route('profile.edit', ['user' => $check])->with('status', 'Kindly update your profile with the missing information');
+                    return redirect()->route('my-profile', ['user' => $check])->with('status', 'Kindly update your profile with the missing information');
                 } else {
 
 
@@ -68,7 +68,7 @@ class SocialAuthController extends Controller
                 $user->last_login_at = now();
                 $user->save();
 
-                return redirect()->route('profile.edit', ['user' => $user])->with('status', 'Kindly update your profile with the missing information');
+                return redirect()->route('my-profile', ['user' => $user])->with('status', 'Kindly update your profile with the missing information');
             }
         } catch (Exception $e) {
 

@@ -13,8 +13,7 @@
 
 
                 @foreach (mainMenu() as $menu)
-                    <a href="#"
-                        class="text-text-secondary  hover:text-primary-700 transition-smooth">{{ $menu->name }}</a>
+                    <a href="{{ route($menu->slug) }}"class="text-text-secondary  hover:text-primary-700 transition-smooth">{{ $menu->name }}</a>
                 @endforeach
 
                 @guest
