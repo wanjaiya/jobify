@@ -53,7 +53,7 @@
 
                  <p class="text-sm text-gray-600 mt-2">
                      Are you sure you want to delete
-                     <span class="font-medium" x-text="selectedEducation?.field_of_study"></span>?
+                     <span class="font-medium" x-text="selectedCertification?.field_of_study"></span>?
                      This action cannot be undone.
                  </p>
 
@@ -62,7 +62,7 @@
                          Cancel
                      </button>
 
-                     <button @click="deleteEducation" class="px-4 py-2 text-sm bg-red-600 text-white rounded"
+                     <button @click="deleteCertification" class="px-4 py-2 text-sm bg-red-600 text-white rounded"
                          :disabled="deleting">
                          <span x-show="!deleting">Delete</span>
                          <span x-show="deleting">Deleting...</span>
@@ -239,7 +239,6 @@
 
                     form: {
                         id: '',
-                       
                         field_of_study: '',
                         institution_name: '',
                         start_date: '',

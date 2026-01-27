@@ -4,74 +4,65 @@ namespace App\Http\Controllers\Common;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Education;
-use App\Services\EducationService;
+use App\Models\Certification;
+use App\Services\CertificationService;
 
-
-class EducationController extends Controller
+class CertificationController extends Controller
 {
     //
     public function __construct(
-        private EducationService $educationService,
+        private CertificationService $certificationService,
+        
     ) {}
+
 
        public function store(Request $request)
     {
         // Implementation for storing education records
         $data = $request->validate([
-            'qualification_id' => 'required|integer',
+           
             'field_of_study' => 'required|string|max:255',
             'institution_name' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
             'present' => 'boolean',
-            'location' => 'required|string',
-            
+          
         ]);
 
-        $education = $this->educationService->store($request->user(), $data);
 
-        return response()->json($education->fresh());
+        $certification = $this->certificationService->store($request->user(), $data);
+
+        return response()->json($certification->fresh());
     }
-
 
 
     public function update(Request $request)
     {
         // Implementation for updating education records
         $data = $request->validate([
-            'qualification_id' => 'required|integer',
             'field_of_study' => 'required|string|max:255',
             'institution_name' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date',
             'present' => 'boolean',
-            'location' => 'required|string',
-            'summary' => 'nullable|string',
+           
         ]);
 
-        $education = $this->educationService->update(
-            $request->user(),
-            $request->id,
-            $data
-        );
 
-        return response()->json($education->fresh());
+        $certification = $this->certificationService->update($request->user(), $request->id, $data);
+
+        return response()->json($certification->fresh());
     }
 
 
-    public function destroy(Education $education, Request $request)
+    public function destroy(Certification $certification, Request $request)
     {
         // Security: ensure user owns the record
-        $this->educationService->delete($request->user(), $education);
+        $this->certificationService->delete($request->user(), $certification);
 
         return response()->json([
-            'message' => 'Education deleted successfully',
-            'id' => $education->id,
+            'message' => 'Certification deleted successfully',
+            'id' => $certification->id,
         ]);
     }
-
-
-
-    
 }

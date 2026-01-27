@@ -6,7 +6,8 @@ use App\Http\Controllers\HomeContoller;
 use App\Http\Controllers\Common\ProfileController;
 use App\Http\Controllers\Common\EducationController;
 use App\Http\Controllers\Common\WorkExperienceController;
-
+use App\Http\Controllers\Common\CertificationController;
+use App\Http\Controllers\Common\SkillController;
 
 Route::get('/', [HomeContoller::class, 'index'])->name('home');
 Route::get('/about-us', [HomeContoller::class, 'aboutUs'])->name('about-us');
@@ -30,18 +31,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/candidate/experience/{experience}', [WorkExperienceController::class, 'experienceDestroy'])->name('candidate.experience.destroy');
 
 
-    Route::post('/candidate/education', [EducationController::class, 'educationStore'])
+    Route::post('/candidate/education', [EducationController::class, 'store'])
         ->name('candidate.education.store');
-    Route::patch('/candidate/education', [EducationController::class, 'educationUpdate'])
+    Route::patch('/candidate/education', [EducationController::class, 'update'])
         ->name('candidate.education.update');
-    Route::delete('/candidate/education/{education}', [EducationController::class, 'educationDestroy'])->name('candidate.education.destroy');
+    Route::delete('/candidate/education/{education}', [EducationController::class, 'destroy'])->name('candidate.education.destroy');
 
-
-    Route::post('/candidate/certification', [EducationController::class, 'certificationStore'])
+    Route::post('/candidate/certification', [CertificationController::class, 'store'])
         ->name('candidate.certification.store');
-    Route::patch('/candidate/certification', [EducationController::class, 'certificationUpdate'])
+    Route::patch('/candidate/certification', [CertificationController::class, 'update'])
         ->name('candidate.certification.update');
-    Route::delete('/candidate/certification/{certification}', [EducationController::class, 'certificationDestroy'])->name('candidate.certification.destroy');
+    Route::delete('/candidate/certification/{certification}', [CertificationController::class, 'destroy'])->name('candidate.certification.destroy');
+
+    Route::get('/candidate/skills', [SkillController::class, 'index'])->name('candidate.skills');
+    Route::post('/candidate/skills', [SkillController::class, 'store'])->name('candidate.skill.store');
+    Route::delete('/candidate/skills/{skill}', [SkillController::class, 'destroy'])->name('candidate.skill.destroy');
+    Route::get('/skills/search', [SkillController::class, 'search']);
 });
 
 

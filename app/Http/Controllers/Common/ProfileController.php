@@ -14,6 +14,7 @@ use App\Models\Certification;
 use App\Models\Education;
 use App\Models\WorkExperience;
 use App\Models\Qualification;
+use App\Models\Skill;
 
 class ProfileController extends Controller
 {
@@ -25,6 +26,8 @@ class ProfileController extends Controller
         $work = WorkExperience::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
         $educations = Education::with('qualifications')->where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
         $certifications = Certification::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
+        $skills = $request->user()->skills;
+        
 
           foreach($educations as $education){
             $education->qualification_level_name = $education->qualifications->pluck('name')->toArray();
@@ -34,7 +37,10 @@ class ProfileController extends Controller
             'user' => $request->user(),
             'experiences' => $work,
             'educations' => $educations,
-            'certifications' => $certifications
+            'certifications' => $certifications,
+            'skills' => $skills,
+            
+
         ]);
     }
 

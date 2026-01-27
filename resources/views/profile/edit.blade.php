@@ -162,50 +162,6 @@
 
 
 
-            // Skill Input Autocomplete
-            const skillInput = document.getElementById('skill-input');
-            const skillSuggestions = document.getElementById('skill-suggestions');
-
-            skillInput.addEventListener('input', (e) => {
-                if (e.target.value.length > 0) {
-                    skillSuggestions.classList.remove('hidden');
-                } else {
-                    skillSuggestions.classList.add('hidden');
-                }
-            });
-
-            // Close suggestions when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!skillInput.contains(e.target) && !skillSuggestions.contains(e.target)) {
-                    skillSuggestions.classList.add('hidden');
-                }
-            });
-
-            // Add Skill Button
-            const addSkillBtn = document.getElementById('add-skill-btn');
-            addSkillBtn.addEventListener('click', () => {
-                const skillName = skillInput.value.trim();
-                const skillLevel = document.getElementById('skill-level').value;
-
-                if (skillName) {
-                    // Here you would add the skill to the appropriate category
-                    // For demo purposes, just show success toast
-                    showSuccessToast();
-                    skillInput.value = '';
-                }
-            });
-
-            // Remove Skill Buttons
-            document.addEventListener('click', (e) => {
-                if (e.target.closest('.skill-remove')) {
-                    const skillTag = e.target.closest('.skill-tag');
-                    skillTag.style.opacity = '0';
-                    setTimeout(() => {
-                        skillTag.remove();
-                        showSuccessToast();
-                    }, 200);
-                }
-            });
 
             // File Upload - Drag and Drop
             const uploadArea = document.getElementById('upload-area');

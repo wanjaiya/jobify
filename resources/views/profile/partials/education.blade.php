@@ -168,10 +168,7 @@
                     </div>
                 </div>
 
-                <div class="mt-4">
-                    <label for="summary" class="label">Position Summary *</label>
-                    <textarea name="summary" id="summary" class="textarea" rows="4" x-model="form.summary"></textarea>
-                </div>
+               
 
                 <!-- Role -->
                 <div class="mt-4">
@@ -295,7 +292,7 @@
                         start_date: '',
                         end_date: '',
                         location: '',
-                        summary: '',
+                       
                         present: false,
                         qualification_level_name: ''
                     },
@@ -314,7 +311,6 @@
                                 start_date: data.start_date,
                                 end_date: data.end_date,
                                 location: data.location,
-                                summary: data.summary,
                                 present: data.present,
                                 qualification_level_name: data.qualification_level_name
                             })
@@ -329,7 +325,6 @@
                                 start_date: '',
                                 end_date: '',
                                 location: '',
-                                summary: '',
                                 qualification_level_name: '',
                                 present: false
                             }

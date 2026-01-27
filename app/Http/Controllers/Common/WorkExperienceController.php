@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Common;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WorkExperience;
+use App\Services\WorkExperienceService;
 
 class WorkExperienceController extends Controller
 {
+ public function __construct(
+        private WorkExperienceService $workExperienceService,
+    ) {}
+
     //
   public function experienceStore(Request $request)
     {
@@ -22,12 +27,8 @@ class WorkExperienceController extends Controller
             'summary' => 'nullable|string',
         ]);
 
-        $data['present'] = $request->boolean('present');
-        $data['end_date'] = $data['present'] ? null : $data['end_date'];
 
-        $experience = $request->user()
-            ->experiences()
-            ->create($data);
+        $experience = $this->workExperienceService->createWorkExperience($request->user(), $data);
 
         return response()->json($experience->fresh());
     }
@@ -48,15 +49,11 @@ class WorkExperienceController extends Controller
 
 
 
-
-
-        $data['present'] = $request->boolean('present');
-        $data['end_date'] = $data['present'] ? null : $data['end_date'];
-
-
-        $request->user()->experiences()->where('id', $request->id)->update($data);
-
-        $experience = WorkExperience::where('id', $request->id)->first();
+        $experience = $this->workExperienceService->updateWorkExperience(
+            $request->user(),
+            $request->id,
+            $data
+        );
 
 
         return response()->json($experience->fresh());
@@ -65,12 +62,7 @@ class WorkExperienceController extends Controller
     public function experienceDestroy(WorkExperience $experience, Request $request)
     {
         // Security: ensure user owns the record
-        abort_unless(
-            $experience->user_id === $request->user()->id,
-            403
-        );
-
-        $experience->delete();
+        $this->workExperienceService->deleteWorkExperience($experience, $request->user());
 
         return response()->json([
             'message' => 'Experience deleted successfully',
