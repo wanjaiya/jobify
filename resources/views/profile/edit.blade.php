@@ -160,58 +160,6 @@
             });
 
 
-
-
-
-            // File Upload - Drag and Drop
-            const uploadArea = document.getElementById('upload-area');
-            const resumeUpload = document.getElementById('resume-upload');
-
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.classList.add('drag-over');
-            });
-
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('drag-over');
-            });
-
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('drag-over');
-
-                const files = e.dataTransfer.files;
-                handleFileUpload(files);
-            });
-
-            resumeUpload.addEventListener('change', (e) => {
-                handleFileUpload(e.target.files);
-            });
-
-            function handleFileUpload(files) {
-                // Validate file types and size
-                const validTypes = ['application/pdf', 'application/msword',
-                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-                ];
-                const maxSize = 5 * 1024 * 1024; // 5MB
-
-                Array.from(files).forEach(file => {
-                    if (!validTypes.includes(file.type)) {
-                        alert('Please upload PDF, DOC, or DOCX files only.');
-                        return;
-                    }
-
-                    if (file.size > maxSize) {
-                        alert('File size must be less than 5MB.');
-                        return;
-                    }
-
-                    // Here you would upload the file to server
-                    // For demo purposes, just show success toast
-                    showSuccessToast();
-                });
-            }
-
             // Preview Profile Button
             const previewProfileBtn = document.getElementById('preview-profile-btn');
             previewProfileBtn.addEventListener('click', () => {

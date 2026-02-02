@@ -231,6 +231,7 @@
 
                         this.deleting = true
 
+
                         try {
                             const response = await fetch(
                                 this.selectedExperience.delete_url, {

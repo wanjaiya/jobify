@@ -56,11 +56,9 @@
                              expert: exp.proficiency_level === 'expert'
                          }"
                          x-text="exp.proficiency_level"></span>
-                     <button @click="openDeleteModal(exp)">
-                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_148fcdd0a-1766618026197.png"
-                             alt="Remove icon" class="w-4 h-4"
-                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
-                     </button>
+                          <button @click="openDeleteModal(exp)" class="text-text-primary">
+                              <i class="fa-solid fa-trash"></i>
+                          </button>
                  </div>
 
              </template>

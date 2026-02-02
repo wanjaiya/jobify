@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Common\CandidateDocumentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeContoller;
 use App\Http\Controllers\Common\ProfileController;
@@ -47,6 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/candidate/skills', [SkillController::class, 'store'])->name('candidate.skill.store');
     Route::delete('/candidate/skills/{skill}', [SkillController::class, 'destroy'])->name('candidate.skill.destroy');
     Route::get('/skills/search', [SkillController::class, 'search']);
+
+    Route::get('/candidate/documents', [CandidateDocumentController::class, 'index'])->name('candidate.documents');
+    Route::post('/candidate/documents', [CandidateDocumentController::class, 'store'])->name('candidate.document.store');
+    Route::delete('/candidate/documents/{document}', [CandidateDocumentController::class, 'destroy'])->name('candidate.document.destroy');
 });
 
 
