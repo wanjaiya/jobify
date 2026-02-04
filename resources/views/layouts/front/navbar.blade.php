@@ -22,18 +22,15 @@
                     <a href="{{ route('login') }}"
                         class="btn bg-primary text-white border border-primary hover:bg-primary-700">Sign In</a>
                 @else
-                    <div class="relative group">
+                    <div class="relative group h-[80px]">
                         <button
-                            class="flex items-center gap-2 text-text-secondary hover:text-primary transition-smooth touch-target"
+                            class="flex items-center gap-2 text-text-secondary hover:text-primary transition-smooth touch-target mt-4"
                             aria-label="User menu">
                             <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
                                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16672fd44-1766814712045.png"
                                     alt="User account icon" class="w-6 h-6"
                                     onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
                             </div>
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_121899370-1764634756035.png"
-                                alt="Dropdown arrow icon" class="w-5 h-5"
-                                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
                         </button>
                         <div class="dropdown hidden group-hover:block absolute right-0 mt-2 w-48 py-2">
                             <a href="candidate_profile.html"
@@ -42,9 +39,10 @@
                             <a href="application_tracking.html"
                                 class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">My
                                 Applications</a>
-                            <a href="javascript:void(0)"
-                                class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">Account
-                                Settings</a>
+                            @if (auth()->user()->hasRole('admin'))
+                            <a href="{{ route('dashboard') }}"
+                                class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">Admin Dashboard</a>
+                            @endif
                             <hr class="my-2 border-border-light">
 
                             <form method="POST" action="{{ route('logout') }}">

@@ -38,13 +38,22 @@ class SocialAuthController extends Controller
                 $check->last_login_at = now();
                 $check->save();
 
-                if (!$check->profile_completed) {
+
+                if(Auth::user()->completion_percentage == 100 && !$check->profile_completed){
+
+                    $check->profile_completed = 1;
+                    $check->save();
+
+                    return redirect()->route('home');
+
+
+                }elseif (!$check->profile_completed) {
                     
                     return redirect()->route('my-profile', ['user' => $check])->with('status', 'Kindly update your profile with the missing information');
                 } else {
 
 
-                    return redirect()->route('dashboard');
+                    return redirect()->route('home');
                 }
             } else {
 
@@ -67,6 +76,8 @@ class SocialAuthController extends Controller
 
                 $user->last_login_at = now();
                 $user->save();
+
+                
 
                 return redirect()->route('my-profile', ['user' => $user])->with('status', 'Kindly update your profile with the missing information');
             }

@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
 
-        
+
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -34,11 +34,20 @@ class AuthenticatedSessionController extends Controller
         $user->last_login_at = now();
         $user->save();
 
-        if (!$user->profile_completed) {
+
+        if (Auth::user()->completion_percentage == 100 && !$$user->profile_completed) {
+
+            $$user->profile_completed = 1;
+            $$user->save();
+
+            return redirect()->route('home');
+
+        } elseif (!$user->profile_completed) {
+
             return redirect()->route('my-profile')->with('status', 'Kindly update your profile with the missing information');
         }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('home', absolute: false));
     }
 
     /**

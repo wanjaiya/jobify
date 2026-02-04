@@ -41,7 +41,9 @@ protected $pageKey;
   }
 
   public function dashboard(){
+    
     if (!Auth::user()->profile_completed) {
+      
             return redirect()->route('my-profile')->with('status', 'Kindly update your profile with the missing information');
         }
 
