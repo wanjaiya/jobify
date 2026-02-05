@@ -22,6 +22,12 @@ class MenuResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    protected static string|\UnitEnum|null $navigationGroup = "Menu";
+
+    protected static ?int $navigationSort = 1;
+
+    // protected static ?string $modelLabel = "Manage Menu";
+
     public static function form(Schema $schema): Schema
     {
         return MenuForm::configure($schema);
