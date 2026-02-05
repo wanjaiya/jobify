@@ -18,9 +18,7 @@ class MenusTable
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
-                TextColumn::make('position')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('types.name'),
                 TextColumn::make('status'),
                 TextColumn::make('published_at')
                     ->dateTime()
@@ -33,9 +31,7 @@ class MenusTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('menu_type_id')
-                    ->numeric()
-                    ->sortable(),
+             
             ])
             ->filters([
                 //
