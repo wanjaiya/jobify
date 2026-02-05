@@ -40,7 +40,7 @@
                                 class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">My
                                 Applications</a>
                             @if (auth()->user()->hasRole('admin'))
-                            <a href="{{ route('dashboard') }}"
+                            <a href="{{ url('admin') }}"
                                 class="block px-4 py-2 text-sm text-text-primary hover:bg-background-secondary transition-smooth">Admin Dashboard</a>
                             @endif
                             <hr class="my-2 border-border-light">

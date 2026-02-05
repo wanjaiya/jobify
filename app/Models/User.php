@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Mail as FacadesMail;
 use Mail;
 use App\Mail\AccountVerificationMail;
 use Illuminate\Queue\Worker;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, FilamentUser
+
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -60,6 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'published' => 'boolean'
         ];
     }
 
@@ -144,5 +148,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->roles()->whereHas('permissions', function ($query) use ($permission) {
             $query->where('slug', $permission);
         })->exists();
+    }
+
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->is_admin;
     }
 }

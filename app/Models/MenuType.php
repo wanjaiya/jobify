@@ -14,5 +14,7 @@ class MenuType extends Model
 
     protected $fillable = ['name', 'slug', 'status', 'published_at'];
 
-    
+    protected $casts = [
+        'published_at' => "timestamp"
+    ];
 }

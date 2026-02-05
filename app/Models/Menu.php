@@ -16,7 +16,13 @@ class Menu extends Model
 
     protected $fillable = ['name', 'slug', 'status', 'published_at', 'position', 'menu_type_id'];
 
-    public function types(): BelongsTo{
-        return $this->belongsTo(MenuType::class, 'menu_type_id', 'id');
+
+    protected $cast = [
+        'published_at' => 'timestamp'
+    ];
+
+    public function types(): BelongsTo
+    {
+        return $this->belongsTo(MenuType::class , 'menu_type_id', 'id');
     }
 }

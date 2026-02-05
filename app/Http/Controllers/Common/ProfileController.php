@@ -21,8 +21,13 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    public function edit(Request $request)
     {
+       if( $request->user()->profile_completed){
+
+          return redirect()->route('home');
+       }
+
         $work = WorkExperience::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
         $educations = Education::with('qualifications')->where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
         $certifications = Certification::where('user_id', $request->user()->id)->orderBy('updated_at', 'desc')->get();
