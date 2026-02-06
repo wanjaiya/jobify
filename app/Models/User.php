@@ -103,6 +103,17 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser
         return $this->hasMany(CandidateDocument::class);
     }
 
+    public function companies()
+    {
+        return $this->hasMany(Company::class);
+    }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+
 
     public function getCompletionPercentageAttribute()
     {

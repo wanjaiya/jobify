@@ -8,7 +8,7 @@ class Company extends Model
 {
     //
 
-    protected $fillable =[
+    protected $fillable = [
         'name',
         'location',
         'contact_name',
@@ -29,8 +29,12 @@ class Company extends Model
 
     public function createdBy()
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class , 'created_by');
     }
 
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 
 }
